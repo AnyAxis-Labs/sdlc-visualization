@@ -72,23 +72,82 @@ graph TB
 
 ```mermaid
 graph TB
-    CEO["CEO Voice/Notes"] --> Transcribe["OpenClaw Transcription"]
-    Transcribe --> Charter["Project Charter + Solution Brief"]
-    Charter --> Review1["PO + CEO Review"]
-    Review1 --> Research["Sisyphus Orchestrates Research"]
+    subgraph Phase_1_Initiation
+        CEO["CEO Voice/Notes"]
+        Transcribe["OpenClaw Transcription"]
+        Charter["Project Charter"]
+        PRFAQ["Solution Brief + PRFAQ"]
+        Review1["PO + CEO Review"]
+        CEO --> Transcribe --> Charter --> PRFAQ --> Review1
+    end
 
-    Research --> Lib["Librarian: Docs + Examples"]
-    Research --> Ora["Oracle: Architecture Analysis"]
-    Research --> Exp["Explore: Codebase Search"]
-    Lib --> Synthesis["Synthesized Findings + Stories"]
-    Ora --> Synthesis
-    Exp --> Synthesis
+    subgraph Phase_2_Research
+        Orchestrate["Sisyphus Orchestrates Research"]
+        Lib["Librarian: Docs + Examples"]
+        Ora["Oracle: Architecture Analysis"]
+        Exp["Explore: Codebase Search"]
+        Stories["User Stories + Milestones"]
+        Repo["Repo + Branch Protections"]
+        Orchestrate --> Lib
+        Orchestrate --> Ora
+        Orchestrate --> Exp
+        Lib --> Stories
+        Ora --> Stories
+        Exp --> Stories
+        Stories --> Repo
+    end
 
-    Synthesis --> Design["Design Docs + ADRs + Diagrams"]
-    Design --> Review2["Architecture Review"]
-    Review2 --> Build["Development + Tests"]
-    Build --> QA["QA Suites + Evidence"]
-    QA --> Deploy["Release Checklist + Deploy"]
-    Deploy --> Monitor["Monitoring + Incident Response"]
-    Monitor --> Retro["Retrospective + Iteration"]
+    subgraph Phase_3_Design
+        ADRs["ADRs + C4 Diagrams"]
+        API["API Contracts"]
+        UX["UX/Flow Guidelines"]
+        Review2["Architecture Review"]
+        ADRs --> API --> UX --> Review2
+    end
+
+    subgraph Phase_4_Development
+        Tasks["Task Breakdown"]
+        Implement["Implementation"]
+        Tests["Unit + Integration Tests"]
+        CI["CI Gates + Review"]
+        Tasks --> Implement --> Tests --> CI
+    end
+
+    subgraph Phase_5_QA
+        TestPlan["Test Plan + Design"]
+        Exec["Test Execution"]
+        Evidence["Evidence Pack"]
+        Triage["Bug Triage"]
+        TestPlan --> Exec --> Evidence --> Triage
+    end
+
+    subgraph Phase_6_Deploy
+        Staging["Staging Deploy"]
+        Checklist["Release Checklist"]
+        Prod["Production Deploy"]
+        Notes["Release Notes"]
+        Staging --> Checklist --> Prod --> Notes
+    end
+
+    subgraph Phase_7_Monitor
+        Alerts["Monitoring + Alerts"]
+        Incidents["Incident Response"]
+        Hotfix["Hotfix + Verification"]
+        Alerts --> Incidents --> Hotfix
+    end
+
+    subgraph Phase_8_Maintenance
+        Retro["Retrospective"]
+        Backlog["Improvement Backlog"]
+        Change["Change Control"]
+        Retro --> Backlog --> Change
+    end
+
+    Review1 --> Orchestrate
+    Repo --> ADRs
+    Review2 --> Tasks
+    CI --> TestPlan
+    Triage --> Staging
+    Notes --> Alerts
+    Hotfix --> Retro
 ```

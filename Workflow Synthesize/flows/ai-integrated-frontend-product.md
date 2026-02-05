@@ -62,14 +62,50 @@ graph TB
 
 ```mermaid
 graph TB
-    Idea["Business Idea"] --> UX["User Flow Draft"]
-    UX --> Design["Design Draft (AI-assisted)"]
-    Design --> Framework["Select Framework + Stack"]
-    Framework --> Rules["Define Coding Rules + Style"]
-    Rules --> Components["Atomic Components"]
-    Components --> Build["Feature Implementation"]
-    Build --> Tests["Unit + E2E Tests"]
-    Tests --> Review["AI Review + Refactor"]
-    Review --> Deploy["Staging -> Production"]
-    Deploy --> Optimize["Perf Optimization"]
+    subgraph Phase_0_Ideation
+        Idea["Business Idea"]
+        Research["Competitor + User Research"]
+        Flows["User Flow Draft"]
+        Prompt["Prompt Engineering"]
+        Draft["AI Design Draft"]
+        Idea --> Research --> Flows --> Prompt --> Draft
+    end
+
+    subgraph Phase_1_PreCoding
+        Stack["Select Framework + Stack"]
+        Structure["Repo + Folder Structure"]
+        Rules["Coding Rules + Style"]
+        PerfBudget["Performance Budget"]
+        Stack --> Structure --> Rules --> PerfBudget
+    end
+
+    subgraph Phase_2_Planning_Coding
+        System["Design System"]
+        Components["Atomic Components"]
+        State["State + Data Layer"]
+        API["API Integration"]
+        Build["Feature Implementation"]
+        System --> Components --> State --> API --> Build
+    end
+
+    subgraph Phase_3_Testing
+        Unit["Unit Tests"]
+        E2E["E2E Tests"]
+        QA["QA Review"]
+        Unit --> E2E --> QA
+    end
+
+    subgraph Phase_4_Deploy_Optimize
+        Review["AI Review + Refactor"]
+        Staging["Staging Deploy"]
+        Prod["Production Deploy"]
+        Monitor["UX + Perf Monitoring"]
+        Optimize["Perf Optimization"]
+        Review --> Staging --> Prod --> Monitor --> Optimize
+    end
+
+    Draft --> Stack
+    PerfBudget --> System
+    Build --> Unit
+    QA --> Review
 ```
