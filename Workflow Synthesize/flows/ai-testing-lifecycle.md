@@ -72,18 +72,86 @@ graph TB
 
 ```mermaid
 graph TB
-    PRD["PRD + Acceptance Criteria"] --> Risk["Risk Triage + Critical Flows"]
-    Risk --> Unit["Unit Tests"]
-    Unit --> Integration["Integration Tests"]
-    Integration --> System["System Readiness + Smoke"]
-    System --> Plan["Test Plan Draft"]
-    Plan --> Design["Test Design + Traceability"]
-    Design --> Execution["Execute Suites (smoke/targeted/regression)"]
-    Execution --> Evidence["Evidence Pack"]
-    Evidence --> Bug["Bug Intake + Ownership"]
-    Bug --> Fix["Fix + Verification"]
-    Fix --> Regression["Targeted Regression"]
-    Regression --> Reporting["Release/Weekly Report"]
-    Reporting --> Improve["Improvement Backlog"]
-    Improve -.next cycle.-> Risk
+    subgraph Inputs
+        PRD["PRD + Acceptance Criteria"]
+        Risk["Risk Triage + Critical Flows"]
+        Contracts["API/Contract Specs"]
+        Data["Test Data Recipe"]
+        Env["Env + Feature Flags"]
+    end
+
+    subgraph Unit_Phase
+        UnitSpec["Unit Scope + Coverage Targets"]
+        UnitAI["Unit Test Copilot"]
+        UnitTests["Unit Test Suite"]
+        UnitCI["Unit CI Gate"]
+        UnitCov["Coverage Report"]
+        UnitSpec --> UnitAI --> UnitTests --> UnitCI --> UnitCov
+    end
+
+    subgraph Integration_Phase
+        IntSpec["Contract Matrix"]
+        IntAI["Integration Contract Agent"]
+        IntData["Seed/Fixtures"]
+        IntRun["Integration Runs"]
+        IntTriage["Failure Triage"]
+        IntSpec --> IntAI --> IntData --> IntRun --> IntTriage
+    end
+
+    subgraph System_Phase
+        Staging["Staging Deploy"]
+        Readiness["Readiness Checks"]
+        Smoke["Smoke Suite"]
+        EnvFix["Env Fixes"]
+        Staging --> Readiness --> Smoke --> EnvFix
+    end
+
+    subgraph Plan_Design
+        PlanDraft["Test Plan Draft"]
+        RACI["RACI + Entry/Exit"]
+        PlanGate["Plan Sign-off"]
+        Design["Test Cases + Traceability"]
+        DataMatrix["Data Matrix"]
+        AutoPick["Automation Candidates"]
+        DesignGate["Design Review"]
+        PlanDraft --> RACI --> PlanGate --> Design --> DataMatrix --> AutoPick --> DesignGate
+    end
+
+    subgraph Execution
+        SuiteSelect["Suite Selection"]
+        ExecAI["Execution Orchestrator"]
+        Runs["Smoke/Targeted/Regression"]
+        Artifacts["Logs + Screens + Video"]
+        Evidence["Evidence Pack"]
+        SuiteSelect --> ExecAI --> Runs --> Artifacts --> Evidence
+    end
+
+    subgraph Bugs
+        Intake["Bug Intake"]
+        Assign["Owner Assignment"]
+        Fix["Fix + Verification"]
+        ReRun["Targeted Re-run"]
+        Intake --> Assign --> Fix --> ReRun
+    end
+
+    subgraph Reporting
+        Report["Release/Weekly Report"]
+        KPI["Quality KPIs"]
+        GoNoGo["Go/No-Go Gate"]
+        Backlog["Improvement Backlog"]
+        Report --> KPI --> GoNoGo --> Backlog
+    end
+
+    PRD --> Risk --> UnitSpec
+    Contracts --> IntSpec
+    Data --> IntData
+    Env --> Staging
+
+    UnitCov --> IntSpec
+    IntTriage --> Staging
+    EnvFix --> PlanDraft
+    DesignGate --> SuiteSelect
+    Evidence --> Intake
+    ReRun --> Report
+    Backlog -.next cycle.-> Risk
 ```
