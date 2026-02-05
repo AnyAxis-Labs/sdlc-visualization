@@ -58,13 +58,47 @@ graph TB
 
 ```mermaid
 graph TB
-    PRD["PRD Draft"] --> Validate["Gatekeeper Review"]
-    Validate --> S1["Synthesis Draft"]
-    S1 --> ADRs["ADRs + C4 Diagrams"]
-    ADRs --> Critique["Critique Rounds"]
-    Critique --> Fix["Update Design + current_state.md"]
-    Fix --> Critique
-    Critique --> Plan["Implementation Plan"]
-    Plan --> Change["Change Request"]
-    Change --> Validate
+    subgraph Phase_1_PRD
+        PRD["PRD Draft"]
+        Gate["Gatekeeper Review"]
+        Gaps["Requirement Gaps"]
+        PRDRev["PRD Corrections"]
+        PRD --> Gate --> Gaps --> PRDRev
+    end
+
+    subgraph Phase_2_Synthesis
+        Context["Context Load"]
+        Draft["Synthesis Draft"]
+        ADRs["ADRs"]
+        C4["C4 Diagrams"]
+        State["Update current_state.md"]
+        Context --> Draft --> ADRs --> C4 --> State
+    end
+
+    subgraph Phase_3_Critique
+        Critique["Hardening Critique"]
+        Response["Resolution Notes"]
+        Fix["Design Updates"]
+        Critique --> Response --> Fix
+    end
+
+    subgraph Phase_4_Plan
+        Plan["Implementation Plan"]
+        Map["Task Mapping"]
+        Review["Architecture Review Gate"]
+        Plan --> Map --> Review
+    end
+
+    subgraph Phase_5_Change
+        CR["Change Request"]
+        Impact["Impact Analysis"]
+        CR --> Impact
+    end
+
+    PRDRev --> Context
+    State --> Critique
+    Fix -.re-synthesize.-> Draft
+    Fix --> Plan
+    Review --> CR
+    Impact --> Gate
 ```

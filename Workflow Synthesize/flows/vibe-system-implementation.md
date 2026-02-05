@@ -56,18 +56,59 @@ graph TB
 
 ```mermaid
 graph TB
-    LoadCtx["Load Architecture Context"] --> LoadPlan["Load Implementation Plan"]
-    LoadPlan --> Align["Alignment Check"]
-    Align --> Prep["Agent Tools + Skills Ready"]
-    Prep --> Foundation["Infrastructure + CI/CD + Observability"]
-    Foundation --> Skeleton["Thin Thread Across Containers"]
-    Skeleton --> ModulePick["Select Next Module"]
-    ModulePick --> ModulePlan["Module Plan + ADRs"]
-    ModulePlan --> Build["Implement + Contracts"]
-    Build --> Tests["Unit + Integration Tests"]
-    Tests --> Bench["Benchmarks"]
-    Bench --> ModuleDone["Module Exit Criteria"]
-    ModuleDone --> ModulePick
-    ModuleDone --> Hardening["System Hardening"]
-    Hardening --> Evidence["System Reports + Dashboards"]
+    subgraph Phase_0_Context
+        PRD["Load prd.md"]
+        State["Load current_state.md"]
+        ADRs["Load ADRs"]
+        Diagrams["Load C4 Diagrams"]
+        PRD --> State --> ADRs --> Diagrams
+    end
+
+    subgraph Phase_0_5_Prep
+        MCP["Required MCPs"]
+        Skills["Required Skills"]
+        Env["Tooling Ready"]
+        MCP --> Skills --> Env
+    end
+
+    subgraph Phase_1_Foundation
+        Infra["Infra Provisioning"]
+        CICD["CI/CD Gates"]
+        Secrets["Secrets + Config"]
+        Obs["Logging + Metrics"]
+        Infra --> CICD --> Secrets --> Obs
+    end
+
+    subgraph Phase_2_Skeleton
+        Contracts["Contracts + Schemas"]
+        Stubs["Service Stubs"]
+        Thin["Thin Thread Flow"]
+        Health["Health Checks"]
+        Contracts --> Stubs --> Thin --> Health
+    end
+
+    subgraph Phase_3_Modules
+        Pick["Select Next Module"]
+        Plan["Module Plan + ADRs"]
+        Build["Implement Logic"]
+        Tests["Unit + Integration Tests"]
+        Bench["Benchmarks"]
+        Docs["Progress Logs"]
+        Exit["Module Exit Criteria"]
+        Pick --> Plan --> Build --> Tests --> Bench --> Docs --> Exit
+    end
+
+    subgraph Phase_4_Hardening
+        E2E["End-to-End Workflows"]
+        Load["Load + Stress Tests"]
+        Failure["Failure Mode Tests"]
+        Sec["Security Review"]
+        Ops["Operational Readiness"]
+        Dash["Dashboards + Alerts"]
+        E2E --> Load --> Failure --> Sec --> Ops --> Dash
+    end
+
+    Phase_0_Context --> Phase_0_5_Prep --> Phase_1_Foundation --> Phase_2_Skeleton --> Phase_3_Modules
+    Exit --> Pick
+    Exit --> Phase_4_Hardening
 ```
