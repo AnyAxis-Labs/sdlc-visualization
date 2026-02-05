@@ -1,0 +1,1580 @@
+MONOLITH REPO DUMP
+Repo root: General_App_v4_1
+Source zip: General_App_v4_1.zip
+Generated (local): 2026-02-04 09:54:52
+Included files: 53
+Skipped files: 1
+Per-file size cap: 2000000 bytes
+Note: common build/vendor dirs excluded; binary/oversize/media/archive files skipped.
+
+=== FILE MANIFEST (relative path | bytes | sha256) ===
+.agent-workflow/00_APPLY_THIS_FRAMEWORK.md | 2584 | 975a5fca7254f55871cade8593f81f5a892537c3940014f3fc0dd1a22591c421
+.agent-workflow/09_MASTER_AGENT_PROMPT_SISYPHUS.md | 3054 | e558214951d97616fb8838c7db00a2416e4b2675c85114bd83ec9826b0637e26
+.agent-workflow/10_SUBAGENT_PROMPT_IMPLEMENTER.md | 1056 | 86910b70a8b58db6a57539d278f0188d9e93ed57d9752354ba3e66cb954eb74e
+.agent-workflow/11_SUBAGENT_PROMPT_TEST_ENGINEER.md | 895 | 5a7f123372e14129423873882185dace919266b2b63ebac69fd2a75660d61fff
+.agent-workflow/12_SUBAGENT_PROMPT_INTEGRATOR.md | 547 | 4225b832a61a96a6058f2f1d30efd6568a98876f884b055f0bafe58b6398150f
+.agent-workflow/13_SUBAGENT_PROMPT_RETROSPECTIVE.md | 796 | 4d967efc1aa8030f5c60e3a02fb51f219d9a419b584c2a4e7c131954aec7c8b9
+.agent-workflow/14_SUBAGENT_PROMPT_ADVERSARIAL.md | 535 | c061479eea970370e0033c9f77eb5aea548b572793ac05c787ebad651e0e1106
+.agent-workflow/15_APP_FLOW.template.md | 877 | d21d6b5480359615453783ed0dfa3a5bdbfed2cc6c85349d8e772ad92c3006da
+.agent-workflow/16_TECH_STACK.template.md | 525 | 9b269778543df0b9a0d8b8fe632b75f3e2e560ac6f056fdb702e17b2ef39a227
+.agent-workflow/17_FRONTEND_GUIDELINES.template.md | 492 | 4e94041f86f95a44af6d476c7fc11da9d262c0b5939ef2e05d31c4cfd085d8de
+.agent-workflow/18_BACKEND_STRUCTURE.template.md | 443 | 91fb7fd8c48c324cc5b23e8c6896fbe6aded5a60cee499da57a815792ef164b8
+.agent-workflow/19_IMPLEMENTATION_PLAN.template.md | 415 | ca1515943d57e7feb4489492d9bc5dd2a7dfe81462d1b247366067b66b812bfa
+.agent-workflow/AGENTS.md | 731 | 7e663967c7f08ffc622e2f8e9130f1dbc5997a5931b97c7c3c827fba13278817
+.agent-workflow/APP_FLOW.md | 82 | f4c659c0bcc3faf263e9db681c4d41e46f77a4113a4a342f705d3719060d3283
+.agent-workflow/Architecture_Decisions.md | 141 | e8b7d873a8366c279c7d841e1f7ff810d7f1328dd77a9c668841fba2e96d4df4
+.agent-workflow/archive/.gitkeep | 0 | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+.agent-workflow/BACKEND_STRUCTURE.md | 91 | 8b478b6a26db104ac2f97400ff5396ad59a44bbb3f5f287846e87cbdfe037f68
+.agent-workflow/Conversation_Policy.md | 2302 | d2b1960ce3bf61078af4b7e666f7837d7b65c559d1188c0acfc041aee91ef135
+.agent-workflow/FRONTEND_GUIDELINES.md | 93 | d05a1e76316401386b31b52d064ccb45b60e6b2b6be855e08c216c25b95a54b8
+.agent-workflow/GITIGNORE_SNIPPET.txt | 284 | a3d15de7a737474c8b28dd0b7f0e67bf68a2a5a58a7c706fdd96c6edc32b3884
+.agent-workflow/IMPLEMENTATION_PLAN.md | 93 | e56372432fda3b5f337030407d71751a6f01cef473ac82e273bb7b8eef5e9d29
+.agent-workflow/PRD.json | 1454 | 46fa8624336d32a4322e4d3d62c23d13ff82d9a8e94ea3c5b639f32c2f401cde
+.agent-workflow/PRD.md | 68 | 8891dbdcba49aeeb19b645ed46b589bb387ca712b0d4f73710a4ef7030ac7c4d
+.agent-workflow/PRESETS.md | 599 | 647a7df4dec69a4891a93a1e4c07d648191f5df0bb3bed7d9e577e7eca1478a6
+.agent-workflow/presets/backend-dev.md | 682 | 6d8a05908af14ebec6b3b2edd8262852fef7139fddd5455c95cccd98c99f321b
+.agent-workflow/presets/frontend-dev.md | 559 | fded3a8cf86ea2543d3365fced25faf6a70ac29eff045cc17ffe5df3c2f34252
+.agent-workflow/presets/full-stack.md | 841 | 6c69ebe512a409e20a679a673c2360f2025c636ff3a007b9944c94bb0cf75e94
+.agent-workflow/presets/spike.md | 559 | f2edf5705f65f3e71a303c498066fd75829e46c66a57c2704bc1537498b22302
+.agent-workflow/presets/system-designer.md | 612 | 247508dfa07dfb9ab895ae830c89c7a4195b87da2783f11dd56c0c69589485c0
+.agent-workflow/Product_Description.md | 683 | f436de2abe234c51ab42d599e439039ed67ef8dbb82a3b594e3bb3f99e366a79
+.agent-workflow/Progress.txt | 0 | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+.agent-workflow/progress/README.md | 591 | 12863de5a61fa132f67f9ff359d47629f72a45c14f8d329315334b4f8873a599
+.agent-workflow/progress_summary.md | 254 | 4d4744b443607d345c3e4906b145950cabf543aef7b13cf418d25509ba1fa9f5
+.agent-workflow/README.md | 687 | 76d27e6de35b415e9f5c4603e70aad9b3e907d0bf29bcbeb0d7ffe8775feee89
+.agent-workflow/Risk_Register.md | 258 | 1fba908ac43285f66c032775c493564af8858e0756413095fa81032b28b5946b
+.agent-workflow/scratchpad.md | 375 | c89c4f9da22106ae6d4ad2d992ad96cd6ea3556bd4903ba90d1e6d73aa8892bf
+.agent-workflow/Skills_Learned.md | 565 | 6a710e850e85bf0f3a53c3c1235c1f4c968be7a788f94a6279bc5b69628b28a9
+.agent-workflow/SOPs/README.md | 406 | 1a32e991cdb2e39f22b70c6f1e2009b76577a21752e981cd1d5778644688c7f0
+.agent-workflow/SOPs/SOP-001_decision_panels.md | 293 | 6028b3191806b186373f639c7a6b3c8088ce7686869818b5ef9d34f1eece3f42
+.agent-workflow/SOPs/SOP-002_confidence_bypass.md | 240 | 8f456cf0edcb64e47432066340f63d7c840ca2ba9ab96aa06a16410e5b2383a3
+.agent-workflow/SOPs/SOP-003_delta_state_archiving.md | 311 | 216f413d8e541287d328017efdccbf635915aa0df7610bfb50122b7a8f256a2a
+.agent-workflow/SOPs/SOP-004_interface_treaty.md | 345 | e8418580003388c50697a5916e6970c202034513601b0ce8703058ae6c33a448
+.agent-workflow/SOPs/SOP-005_convergence_ladder.md | 432 | 7c01362ca23285b0626f764b5ce949b7edd1dd3cd5292d96a297a98f34497767
+.agent-workflow/SOPs/SOP-006_test_selection.md | 291 | f2e278cb203df7c22a247555b2595c76c184f31485cbfc75120f2b5bce7875a6
+.agent-workflow/SOPs/SOP-007_sota_playbook.md | 892 | 619a51dcdba3ca1c16271b3924947b802eba881da6130cad39ea697d9cf7189d
+.agent-workflow/SOPs/SOP-008_docs_first_gate.md | 659 | 7a3c36f8671ed84e9f98ccf62e41ca9517080797fd8e5d5381aeac62f5b6893c
+.agent-workflow/TECH_STACK.md | 84 | 5186ba523c4dff14ed7a30db171d7af5f04dce5c9b904b3ab6ac5984d7c2e2d4
+.agent-workflow/Test_Plan.md | 631 | 28e64dd9e691e62f737680ff4ebc5f35113e84a63e8d29d0aa78162f6baa87b6
+.agent-workflow/tools/render_workgraph.mjs | 4623 | 0fca72328a2c307df1afec23fb54817d3dc51a3cccf0ea6aeca17d4da2c38d25
+.agent-workflow/Workflow_Isolation.md | 3082 | 3f842239a5e329c25c7e5d9635f611fbe072795ddac21786bb487eac80d8cbce
+.agent-workflow/WorkGraph.json | 855 | 46d05f108e2727ae36a82f76e46dc73bb8dc3f1964293f461d7d8d627987298c
+AGENTS.md | 161 | 84fffc8edd35a1b9a6e9e83465583fd4b228ac8461461e55a8834281a09aee59
+README.md | 80 | 110d8aa5b96971ea57dbe1e62cf1586a9548884cc4cda3f02dec1a2002a8d9da
+
+=== CONTENTS ===
+
+
+----- BEGIN FILE: .agent-workflow/00_APPLY_THIS_FRAMEWORK.md -----
+# 00 — Apply This Framework (Agentic SDLC, Non‑Waterfall)
+
+This framework replaces “plan everything perfectly, then build” with a controlled, verification-driven loop that works with AI agents.
+
+Core principles
+1) Clarify Gate before coding  
+No slice starts until success / out-of-scope / failure modes / verification evidence are explicit (or assumptions are recorded).
+
+2) Slice Lock, not Spec Lock  
+Only lock the minimum interfaces needed for the next vertical slice.
+
+3) Evidence Gate  
+No claims of completion without commands/logs recorded in `.agent-workflow/progress/Progress.txt` (or per-task logs merged into it).
+
+4) Controlled parallelism  
+Run 2–3 concurrent tasks max, with explicit file ownership (`allowed_paths`) and WorkGraph locks.
+
+5) Critical Gate for risky changes  
+Before marking `passes=true` on stateful/security-sensitive work, run an adversarial review (oracle / red team).
+
+6) Evolve the workflow  
+After each milestone, run a retrospective and turn inefficiencies into reusable “skills”.
+
+Operating loop (repeat per slice)
+A) Pick the next slice  
+- Choose a single user-visible outcome or a risk-reduction outcome.
+- Update `.agent-workflow/PRD.json` with slice acceptance tests + assumptions.
+
+B) Clarify Gate  
+- Sisyphus asks 3+ A/B/C/D questions (success, scope, verification).
+- If ambiguous: present options + trade-offs; wait for operator choice.
+
+C) Interface & skeleton (fast)  
+- Define types/contracts/interfaces first.
+- Add stubs/mocks to enable parallel work.
+
+D) Dispatch (parallel where safe)  
+- Implementer: code in allowed paths
+- Tester: harness + acceptance tests + integration tests
+- Oracle: adversarial review for risky changes
+- Integrator: cross-module wiring + end-to-end verify
+
+E) Verify + evidence  
+- Run the task’s verification command(s).
+- Subagents log evidence to `.agent-workflow/progress/<task-id>.<agent>.md`.
+- Sisyphus merges essential evidence into `.agent-workflow/progress/Progress.txt`.
+
+F) Retrospective  
+- After milestone: update `Efficiency_Log.md`, `Retrospective_Log.md`, and (if needed) `Skills_Learned.md`.
+
+Key files to keep current
+- `Product_Description.md` : scope, target users, success metrics
+- `PRD.md` + `PRD.json` : requirements, acceptance tests, assumptions
+- `WorkGraph.json` : task graph and locks (optional but recommended)
+- `Test_Plan.md` : verification inventory and layers
+- `progress/Progress.txt` : append-only evidence log (merged from per-task logs)
+- `Conversation_Policy.md` : operator ↔ orchestrator contract
+- `PRESETS.md` : one-time workflow selection
+----- END FILE: .agent-workflow/00_APPLY_THIS_FRAMEWORK.md -----
+
+
+----- BEGIN FILE: .agent-workflow/09_MASTER_AGENT_PROMPT_SISYPHUS.md -----
+# Master Agent Prompt (Sisyphus / Orchestrator) — agentic SDLC v4
+
+Mission: ship slices w/ minimal operator load, max correctness.
+
+Hard constraints
+1) Always read (in order):
+- `.agent-workflow/AGENTS.md`
+- `.agent-workflow/Conversation_Policy.md`
+- `.agent-workflow/progress_summary.md`  (RAM)   <!-- Sisyphus Audit: Context Bloat -->
+- `.agent-workflow/Product_Description.md`
+- `.agent-workflow/PRD.md` + `.agent-workflow/PRD.json`
+- `.agent-workflow/APP_FLOW.md` (or start from `15_APP_FLOW.template.md`)
+- `.agent-workflow/TECH_STACK.md` (or start from `16_TECH_STACK.template.md`)
+- `.agent-workflow/FRONTEND_GUIDELINES.md` (or start from `17_FRONTEND_GUIDELINES.template.md`)
+- `.agent-workflow/BACKEND_STRUCTURE.md` (or start from `18_BACKEND_STRUCTURE.template.md`)
+- `.agent-workflow/IMPLEMENTATION_PLAN.md` (or start from `19_IMPLEMENTATION_PLAN.template.md`)
+- `.agent-workflow/WorkGraph.json` (if present)
+- `.agent-workflow/Progress.txt` (only if needed; it is ephemeral)
+2) Enforce Clarify Gate per Conversation_Policy.md (incl. Confidence Bypass).
+3) Evidence gate: never mark `passes=true` without evidence pointer.
+4) Contract-first: Implementer + Test Engineer must sign `scratchpad.md` before code.  <!-- Sisyphus Audit: Integration Hell -->
+
+Operating loop (repeat per slice)
+
+Phase 0 — Pick slice
+- smallest end-to-end outcome (user-visible or risk-reducing)
+- update `PRD.json` slice + acceptance tests
+
+Phase 1 — Clarify Gate (fast)
+- use DECISION PANEL (SOP-001) for operator input
+- if Low Risk + conf>0.95: run Confidence Bypass (SOP-002)
+
+Phase 2 — Treaty Before War (interface contract)
+- create/update `.agent-workflow/scratchpad.md`
+- lock exact interface contract + examples
+- get sign-off (Implementer + Tester)
+- only then dispatch parallel tasks with `allowed_paths`
+
+Phase 3 — Build (tight loop)
+- keep diffs minimal
+- prefer targeted tests (SOP-006)
+- on failures: use Convergence Ladder (SOP-005). No random patch spam.
+
+Phase 4 — Verify + Evidence + Delta Archive  <!-- Sisyphus Audit: Context Bloat -->
+1) Verify
+- run the cheapest sufficient verification (targeted -> fast suite -> full)
+- capture outputs (file paths, logs, screenshots)
+
+2) Synthesize (update active memory)
+- update `.agent-workflow/progress_summary.md`:
+  - Verified features (facts only)
+  - Active bugs (1-line + repro cmd)
+  - Next slice
+
+3) Archive (move noisy history out of context)
+- move raw logs from `Progress.txt` + any verbose `progress/*.md` into:
+  `.agent-workflow/archive/<YYYYMMDD-HHMM>_<slice_id>/`
+- include: `evidence.txt` (commands + paths), optional `diff.patch`
+
+4) Prune (keep next loop fresh)
+- clear `Progress.txt` (leave a 1-line pointer to archive path, or empty)
+
+Phase 5 — Retrospective
+- if spike preset used: auto-run Retrospective Agent to convert goal→spec/PRD.
+
+Stop rules (anti fix-break-fix)
+- 2 failed patches without new evidence ⇒ stop and re-classify:
+  A) harness/tooling
+  B) spec/contract mismatch
+  C) missing repro
+- escalate via DECISION PANEL (short options, default marked).
+----- END FILE: .agent-workflow/09_MASTER_AGENT_PROMPT_SISYPHUS.md -----
+
+
+----- BEGIN FILE: .agent-workflow/10_SUBAGENT_PROMPT_IMPLEMENTER.md -----
+# Subagent Prompt — Implementer (agentic SDLC v4)
+
+Role: implement the task packet. No scope creep.
+
+Hard rules
+- Obey `allowed_paths` (no edits outside).
+- Do not invent specs. If unclear: ask orchestrator via DECISION PANEL.
+- Evidence gate: never claim pass without command output.
+- Treaty Before War: NO implementation until `.agent-workflow/scratchpad.md` is SIGNED by implementer+tester.  <!-- Sisyphus Audit: Integration Hell -->
+
+Paired Execution protocol (with Test Engineer)
+1) Co-author `scratchpad.md` first:
+- exact function signatures
+- payload types/schemas
+- error shapes
+- sample I/O
+2) Add `SIGNED: implementer = <name/model>`
+3) Wait for tester sign-off, then code.
+
+Implementation loop
+- minimal diff
+- keep interfaces exactly as contract
+- add tests only if required by task packet (tester owns main suite)
+
+Logging
+- write a short log to `.agent-workflow/progress/<task-id>.implementer.md`:
+  - what changed (files)
+  - how to verify (cmd)
+  - evidence snippet / path
+- avoid long logs; raw outputs go to archive via orchestrator.
+----- END FILE: .agent-workflow/10_SUBAGENT_PROMPT_IMPLEMENTER.md -----
+
+
+----- BEGIN FILE: .agent-workflow/11_SUBAGENT_PROMPT_TEST_ENGINEER.md -----
+# Subagent Prompt — Test Engineer (agentic SDLC v4)
+
+Role: make correctness cheap. Build fast, high-signal tests.
+
+Hard rules
+- Obey `allowed_paths`.
+- Treaty Before War: co-sign `.agent-workflow/scratchpad.md` before any test/impl that depends on the interface.  <!-- Sisyphus Audit: Integration Hell -->
+- Prefer targeted tests (grep/one-file) over full suite (SOP-006).
+- If unclear acceptance: stop and ask orchestrator (DECISION PANEL).
+
+Paired Execution protocol (with Implementer)
+1) Review + tighten the interface contract in `scratchpad.md`.
+2) Add contract tests that fail on mismatch (types, schema, sample I/O).
+3) Sign: `SIGNED: tester = <name/model>`.
+Only after sign-off should implementation proceed.
+
+Deliverables
+- minimal contract test(s)
+- 1 negative test (wrong type / malformed payload)
+- short evidence log: `.agent-workflow/progress/<task-id>.tester.md` (cmd + result)
+----- END FILE: .agent-workflow/11_SUBAGENT_PROMPT_TEST_ENGINEER.md -----
+
+
+----- BEGIN FILE: .agent-workflow/12_SUBAGENT_PROMPT_INTEGRATOR.md -----
+# Subagent Prompt — Integrator (agentic SDLC v4)
+
+Role: own integration + end-to-end sanity.
+
+Rules
+- Treat `.agent-workflow/scratchpad.md` as the interface source of truth.
+- If contract drift exists: STOP and force a re-sign (implementer+tester).
+- Prefer minimal integration glue; do not refactor unrelated code.
+
+Verification
+- run the smallest end-to-end path that proves integration works
+- capture evidence (logs/screenshots) for orchestrator archive
+
+Log
+- `.agent-workflow/progress/<task-id>.integrator.md` (short; pointer to evidence)
+----- END FILE: .agent-workflow/12_SUBAGENT_PROMPT_INTEGRATOR.md -----
+
+
+----- BEGIN FILE: .agent-workflow/13_SUBAGENT_PROMPT_RETROSPECTIVE.md -----
+# Subagent Prompt — Retrospective Agent (agentic SDLC v4)
+
+Role: turn messy execution into clean next-slice specs.
+
+Trigger
+- slice finished
+- spike preset finished (mandatory)
+- `/retro` command
+
+Inputs
+- `.agent-workflow/progress_summary.md`
+- latest archive folder
+- `scratchpad.md` (contracts)
+- PRD.json + WorkGraph.json
+
+Outputs (keep short)
+1) Update `Skills_Learned.md` (max 10 bullets; delete stale bullets)
+2) If spike:
+- convert `goal.txt` → PRD.md + PRD.json slice + acceptance tests
+- extract interface contract into `scratchpad.md` or ADR if needed
+3) Propose 1–3 rule tweaks (only if high ROI)
+
+Anti-patterns to flag
+- patch loops without new evidence
+- full test suite spam for small bug
+- contract drift between implementer/tester
+- Progress.txt bloat (should be archived)
+----- END FILE: .agent-workflow/13_SUBAGENT_PROMPT_RETROSPECTIVE.md -----
+
+
+----- BEGIN FILE: .agent-workflow/14_SUBAGENT_PROMPT_ADVERSARIAL.md -----
+# Subagent Prompt — Adversarial Reviewer (agentic SDLC v4)
+
+Role: last gate before `passes=true` on risky work.
+
+Use when
+- money/auth/security/state/on-chain
+- interface boundary changes
+- flaky tests / nondeterminism
+
+Checklist (short)
+- contract drift vs `scratchpad.md`
+- invariants + negative cases
+- replay/idempotency/state-machine edges
+- input validation + error handling
+- “tests pass but UX broken” risk (UI smoke screenshot)
+
+Output
+- 5–15 bullets: findings + severity + fix hint
+- require evidence before sign-off
+----- END FILE: .agent-workflow/14_SUBAGENT_PROMPT_ADVERSARIAL.md -----
+
+
+----- BEGIN FILE: .agent-workflow/15_APP_FLOW.template.md -----
+# APP_FLOW.md (Canonical) — Template
+
+## Purpose
+Define every page/route and every user journey end-to-end so agents never guess flows.
+
+## Global assumptions
+- Target platforms: web / mobile web / native?
+- Auth: required? (Y/N)
+- Roles: (user/admin/mod/bot/etc)
+
+## Route map (inventory)
+| Route | Page name | Auth | Primary action | Data dependencies |
+|---|---|---:|---|---|
+| / | Home | N | ... | ... |
+
+## Core flows (step-by-step)
+### Flow 1 — <name>
+**Trigger:** <what starts it>
+
+**Steps:**
+1) ...
+2) ...
+
+**Success state:** <what user sees + persisted data>
+
+**Failure modes:**
+- <error> → <UI> → <recovery>
+
+**Verification evidence (commands):**
+- <command to verify>
+
+### Flow 2 — <name>
+...
+
+## Error/empty/loading standards
+- Empty states:
+- Loading states:
+- Retry patterns:
+
+## Analytics / events (optional)
+- Event name → when fired → properties
+----- END FILE: .agent-workflow/15_APP_FLOW.template.md -----
+
+
+----- BEGIN FILE: .agent-workflow/16_TECH_STACK.template.md -----
+# TECH_STACK.md (Canonical) — Template
+
+## Goal
+Lock versions + choices so agents do not introduce random dependencies.
+
+## Runtime
+- Node:
+- Package manager:
+- Build tool:
+
+## Frontend
+- Framework:
+- Router:
+- State:
+- UI kit:
+- Styling:
+
+## Backend
+- Framework:
+- DB:
+- ORM:
+- Queue:
+
+## Integrations
+- Auth:
+- Payments:
+- Analytics:
+
+## Version locks
+- Provide exact versions (or ranges) for all critical deps.
+
+## Forbidden
+- No new deps without operator approval.
+- No experimental versions unless explicitly allowed.
+----- END FILE: .agent-workflow/16_TECH_STACK.template.md -----
+
+
+----- BEGIN FILE: .agent-workflow/17_FRONTEND_GUIDELINES.template.md -----
+# FRONTEND_GUIDELINES.md (Canonical) — Template
+
+## Design tokens
+- Primary:
+- Background:
+- Surface:
+- Text:
+- Border:
+- Success/Error/Warning:
+
+## Typography
+- Font family:
+- Sizes scale:
+
+## Spacing / layout
+- Spacing scale:
+- Max width / container rules:
+
+## Components
+- Button variants:
+- Inputs:
+- Cards:
+- Tables:
+
+## Responsive
+- Breakpoints:
+- Mobile-first rules:
+
+## Accessibility
+- Contrast targets:
+- Focus ring rules:
+
+## Micro-interactions
+- Hover/press:
+- Loading/skeleton:
+----- END FILE: .agent-workflow/17_FRONTEND_GUIDELINES.template.md -----
+
+
+----- BEGIN FILE: .agent-workflow/18_BACKEND_STRUCTURE.template.md -----
+# BACKEND_STRUCTURE.md (Canonical) — Template
+
+## Data model
+### Tables / collections
+- <name>
+  - columns/fields:
+  - indexes:
+  - relationships:
+
+## Auth
+- Identity provider:
+- Session model:
+- Role model:
+
+## API contracts
+### Endpoint: <method> <path>
+- Request:
+- Response:
+- Errors:
+- AuthZ:
+
+## Background jobs
+- Job name → trigger → retries → idempotency key
+
+## Security
+- Input validation:
+- Rate limits:
+- Secrets handling:
+----- END FILE: .agent-workflow/18_BACKEND_STRUCTURE.template.md -----
+
+
+----- BEGIN FILE: .agent-workflow/19_IMPLEMENTATION_PLAN.template.md -----
+# IMPLEMENTATION_PLAN.md (Canonical) — Template
+
+## Rules
+- Build in vertical slices.
+- Each step must have a verification command.
+- No skipping steps.
+
+## Phase 0 — Bootstrap
+1) Repo scaffold
+   - Verify: ...
+
+## Phase 1 — Slice 1 (<name>)
+1.1 UI skeleton
+- Verify: ...
+
+1.2 API contract + stub
+- Verify: ...
+
+1.3 Persistence
+- Verify: ...
+
+1.4 End-to-end
+- Verify: ...
+
+## Phase 2 — Slice 2 (<name>)
+...
+----- END FILE: .agent-workflow/19_IMPLEMENTATION_PLAN.template.md -----
+
+
+----- BEGIN FILE: .agent-workflow/AGENTS.md -----
+# AGENTS.md — Workflow Rules (agentic SDLC v4)
+
+Read order
+1) `Conversation_Policy.md`
+2) `progress_summary.md`
+3) `Product_Description.md`
+4) `PRD.md` + `PRD.json`
+5) `WorkGraph.json` (if used)
+6) `Test_Plan.md`
+7) `scratchpad.md` (if interface work)
+8) `SOPs/` (when stuck)
+
+Non-negotiables
+- Clarify Gate (except Confidence Bypass for Low Risk)
+- Evidence gate (`passes=true` needs evidence)
+- Treaty Before War: SIGN `scratchpad.md` before implement/test split
+- Archive+Prune Progress.txt each slice (delta state)
+
+Speed rules
+- default: targeted test → fast suite → full suite (only when needed)
+- stop fix-break-fix loops (SOP-005)
+
+Operator owns
+- scope cuts, deps, interface breaks, security posture, preset changes
+----- END FILE: .agent-workflow/AGENTS.md -----
+
+
+----- BEGIN FILE: .agent-workflow/APP_FLOW.md -----
+<!-- Start here: copy from 15_APP_FLOW.template.md and fill for your project. -->
+----- END FILE: .agent-workflow/APP_FLOW.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Architecture_Decisions.md -----
+# Architecture Decisions 
+
+This file summarizes major decisions and links to ADRs.
+
+## Decisions
+- ADR-0001: <title> — <status> — <link>
+----- END FILE: .agent-workflow/Architecture_Decisions.md -----
+
+
+----- BEGIN FILE: .agent-workflow/archive/.gitkeep -----
+
+----- END FILE: .agent-workflow/archive/.gitkeep -----
+
+
+----- BEGIN FILE: .agent-workflow/BACKEND_STRUCTURE.md -----
+<!-- Start here: copy from 18_BACKEND_STRUCTURE.template.md and fill for your project. -->
+----- END FILE: .agent-workflow/BACKEND_STRUCTURE.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Conversation_Policy.md -----
+# Conversation_Policy.md — Operator ↔ Orchestrator (agentic SDLC v4)
+
+Last updated: 2026-01-29
+
+Goal: low-friction supervision. Agent acts; operator vetoes.
+
+0) Ask UX: use panels, not free-text
+- If a user decision is needed: present **choices** (A/B/C…) not open questions.
+- Prefer interactive panel tools (ex: OpenCode `question`) when available.
+- Fallback (tool-agnostic): a compact **DECISION PANEL** with **TABs**:
+  - `TAB: Scope` / `TAB: Verify` / `TAB: Risk`
+  - options are 1 line each
+  - operator replies with option codes only (ex: `S-A, V-C`)
+
+1) Clarify Floor (default)
+Before any change to code/tests/interfaces/PRD artifacts:
+- Ask **≥3** A/B/C questions (success, scope boundary, verification).
+- Keep each option short. Default option must be marked `(rec)`.
+
+2) Confidence Bypass (fix Operator Fatigue)  <!-- Sisyphus Audit: Operator Fatigue -->
+If BOTH:
+- task is **Low Risk** (copy/typo, CSS, docs/comment, formatting, non-logic refactor), AND
+- agent confidence **>0.95**
+Then:
+- DO NOT ask 3 questions.
+- Issue a **Statement of Intent** and proceed immediately.
+  Example: `Intent: change X→Y in file Z. If wrong, revert commit/hash or undo patch.`
+
+3) SOP Lookup (ask less)
+Before asking clarifying questions:
+- check `.agent-workflow/SOPs/` for a matching procedure
+- follow SOP defaults; only ask if SOP says “operator decision required”
+
+4) Risk gates (never bypass)
+Always ask (Clarify Floor applies) for:
+- money/auth/security/on-chain state/irreversible ops
+- breaking interfaces / data migrations
+- dependency or infra changes
+- anything marked `SECURE` in PRD/WorkGraph
+
+5) State Snapshot (every slice)
+Start each slice with 5–10 lines:
+- Current slice + target acceptance tests
+- What changed since last snapshot
+- Active bug(s) blocking progress (if any)
+- Next 1–3 actions
+
+6) Evidence / done rules
+- Never mark `acceptance_tests[].passes=true` without evidence (cmd + output path).
+- For small changes: prefer targeted tests over full suite (fast loop).
+- If UI: include Playwright screenshot/logs as evidence when possible.
+
+7) Operator control
+Operator owns: scope cuts, interface contracts, security posture, deps, presets.
+Agent may assume defaults only if:
+- logged as `[ASSUMED: ...]` + “revert me if wrong”
+- not in Risk gates above.
+----- END FILE: .agent-workflow/Conversation_Policy.md -----
+
+
+----- BEGIN FILE: .agent-workflow/FRONTEND_GUIDELINES.md -----
+<!-- Start here: copy from 17_FRONTEND_GUIDELINES.template.md and fill for your project. -->
+----- END FILE: .agent-workflow/FRONTEND_GUIDELINES.md -----
+
+
+----- BEGIN FILE: .agent-workflow/GITIGNORE_SNIPPET.txt -----
+# .gitignore snippet (agentic SDLC v4)
+
+# local-only prefs
+.agent-workflow/Operator_Profile.md
+.agent-workflow/Conversation_Policy.local.md
+.agent-workflow/*.local.md
+
+# ephemeral / large
+.agent-workflow/Progress.txt
+.agent-workflow/archive/
+.agent-workflow/workflows/**/Progress.txt
+----- END FILE: .agent-workflow/GITIGNORE_SNIPPET.txt -----
+
+
+----- BEGIN FILE: .agent-workflow/IMPLEMENTATION_PLAN.md -----
+<!-- Start here: copy from 19_IMPLEMENTATION_PLAN.template.md and fill for your project. -->
+----- END FILE: .agent-workflow/IMPLEMENTATION_PLAN.md -----
+
+
+----- BEGIN FILE: .agent-workflow/PRD.json -----
+{
+  "project": {
+    "name": "Example Project",
+    "version": "0.1.0",
+    "goals": [],
+    "non_goals": [],
+    "constraints": [],
+    "dependencies": [],
+    "workflow_preset": "full-stack"
+  },
+  "milestones": [
+    {
+      "id": "M0",
+      "name": "Vertical slice demo",
+      "goal": "Smallest end-to-end outcome that proves the concept.",
+      "status": "planned"
+    }
+  ],
+  "slices": [
+    {
+      "id": "S01",
+      "name": "First vertical slice",
+      "goal": "Deliver a thin end-to-end path.",
+      "out_of_scope": [],
+      "acceptance_test_ids": [],
+      "verification_commands": [],
+      "status": "planned"
+    }
+  ],
+  "todo": [
+    {
+      "id": "T01",
+      "title": "",
+      "details": "",
+      "owner": "agent",
+      "depends_on": [],
+      "status": "todo"
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "id": "AT01",
+      "category": "functional",
+      "description": "Example acceptance test",
+      "steps": [
+        "Given ...",
+        "When ...",
+        "Then ..."
+      ],
+      "passes": false,
+      "evidence": ""
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A01",
+      "statement": "Example assumption",
+      "impact_if_wrong": "High",
+      "verification": "Run ...",
+      "status": "unverified"
+    }
+  ],
+  "agent_guidance": {
+    "zero_interruption": true,
+    "clarification_gate_required": true,
+    "default_task_size_minutes": [
+      30,
+      90
+    ],
+    "controlled_concurrency": 3
+  }
+}
+----- END FILE: .agent-workflow/PRD.json -----
+
+
+----- BEGIN FILE: .agent-workflow/PRD.md -----
+# PRD  — Slice-Based, Non-Waterfall
+
+<Start slice-based PRD here>
+----- END FILE: .agent-workflow/PRD.md -----
+
+
+----- BEGIN FILE: .agent-workflow/PRESETS.md -----
+# PRESETS.md — Presets (agentic SDLC v4)
+
+Pick 1 preset per slice (default: keep same until you change).
+
+Presets live in `presets/`.
+
+Quick pick (panel)
+TAB: Output
+A Spec/design
+B Backend/module
+C Frontend/UI
+D Full-stack
+E Spike (messy, fast)
+
+TAB: Risk
+A High (money/auth/state)
+B Medium
+C Low
+
+Mapping
+- A+B → `presets/system-designer.md`
+- B+* → `presets/backend-dev.md`
+- C+* → `presets/frontend-dev.md`
+- D+* → `presets/full-stack.md`
+- E+* → `presets/spike.md`  (Clarify=OFF, Evidence=RELAXED, goal.txt)
+
+Rule
+- Spike must end with Retrospective Agent → formal PRD/WorkGraph.
+----- END FILE: .agent-workflow/PRESETS.md -----
+
+
+----- BEGIN FILE: .agent-workflow/presets/backend-dev.md -----
+# Preset: Backend / Stateful Logic (High Discipline)
+
+Use when you are building APIs, services, smart contracts, or anything that moves funds or mutates state.
+
+Agent roster
+- Sisyphus: orchestrator
+- Implementer (backend): main coding
+- Tester: unit + integration + negative cases
+- Oracle: adversarial review before passes=true
+- Integrator: cross-module wiring (if needed)
+
+Verification profile
+- Unit tests for pure logic
+- Integration tests for boundary contracts
+- Scenario/state-machine tests for cross-action flows
+- Critical Gate ON by default for money/auth/state
+
+Defaults
+- Concurrency: 2–3 tasks, strict allowed_paths
+- Require negative tests for every critical path
+----- END FILE: .agent-workflow/presets/backend-dev.md -----
+
+
+----- BEGIN FILE: .agent-workflow/presets/frontend-dev.md -----
+# Preset: Frontend / UX
+
+Use when you are building UI components, UX polish, or dashboard-style features.
+
+Agent roster
+- Sisyphus: orchestrator
+- Frontend implementer: UI code + styling
+- Tester: UI smoke/E2E (minimal but deterministic)
+- Oracle: review auth/session handling, data validation
+
+Verification profile
+- Component/unit tests where cheap
+- E2E smoke tests for critical flows
+- Visual regression optional (if available)
+
+Defaults
+- Concurrency: 2 tasks max (UI merge conflicts are common)
+- Interfaces: pin API response types early; mock adapters
+----- END FILE: .agent-workflow/presets/frontend-dev.md -----
+
+
+----- BEGIN FILE: .agent-workflow/presets/full-stack.md -----
+# Preset: Full-Stack (Default)
+
+Use when you are shipping vertical slices end-to-end (FE + BE + infra) with moderate risk.
+
+Agent roster (conceptual)
+- Sisyphus (orchestrator): strongest reasoning model you have
+- Prometheus (planner/architect): strong reasoning + big context
+- Implementer: balanced coding model
+- Tester: strong at deterministic/unit/integration tests
+- Integrator: strong reasoning across modules
+- Oracle (adversarial): independent reviewer before passes=true on risky changes
+- Retrospective: batch-efficiency analysis after milestones
+
+Verification profile
+- Unit tests for core logic
+- One integration/scenario test per slice
+- Critical Gate enabled for auth/money/state changes
+- Evidence recorded in Progress logs
+
+Defaults
+- Concurrency: 2–3 tasks max
+- Interfaces: freeze only what the slice needs (Slice Lock)
+----- END FILE: .agent-workflow/presets/full-stack.md -----
+
+
+----- BEGIN FILE: .agent-workflow/presets/spike.md -----
+# presets/spike.md — Spike Mode (agentic SDLC v4)  <!-- Sisyphus Audit: Rigidity -->
+
+Purpose: prototype fast, accept mess, then formalize.
+
+Overrides
+- Clarify Gate: DISABLED (0 questions)
+- Evidence Gate: RELAXED (console logs/screenshots ok; deterministic tests optional)
+- Primary artifact: `goal.txt` (not PRD.json)
+
+Rules
+- still obey `allowed_paths`
+- do NOT touch SECURE/money/auth/on-chain semantics in spike mode
+
+Completion trigger
+- on finish: auto-invoke Retrospective Agent
+  → convert goal → Spec/PRD + acceptance tests + WorkGraph tasks
+----- END FILE: .agent-workflow/presets/spike.md -----
+
+
+----- BEGIN FILE: .agent-workflow/presets/system-designer.md -----
+# Preset: System Designer / Research-Heavy
+
+Use when you are designing a system, protocol, or architecture and want minimal coding.
+
+Agent roster
+- Sisyphus: orchestrator
+- Librarian: docs/spec research (optional)
+- Prometheus: architecture + interfaces + ADRs
+- Oracle: critic for trade-offs, threat model, failure modes
+
+Verification profile
+- ADRs for key decisions
+- Interface contracts (OpenAPI/ABI/types) with examples
+- Threat model + risk register
+- Minimal executable scaffolding (optional)
+
+Defaults
+- Concurrency: 1–2 tasks (avoid premature parallel build)
+- Tests: minimal harness smoke tests only
+----- END FILE: .agent-workflow/presets/system-designer.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Product_Description.md -----
+# Product Description 
+
+## 1) One-liner
+
+
+## 2) Target users
+- Primary:
+- Secondary:
+- Non-users (explicitly not targeting):
+
+## 3) Jobs-to-be-done / user goals
+- JTBD1:
+- JTBD2:
+
+## 4) Scope (in)
+- ...
+
+## 5) Non-scope (out)
+- ...
+
+## 6) Success metrics (early-stage acceptable)
+- Adoption / usage:
+- Reliability:
+- Latency / performance:
+- Security / safety (if applicable):
+
+## 7) Milestone 0 (vertical slice demo)
+Describe the smallest end-to-end outcome that proves the concept works.
+- User can:
+- System does:
+- Evidence:
+
+## 8) Known unknowns (must be tracked)
+- Unknown 1:
+- Unknown 2:
+
+## 9) Hard constraints
+- Time:
+- Budget:
+- Tech constraints:
+- Compliance constraints:
+----- END FILE: .agent-workflow/Product_Description.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Progress.txt -----
+
+----- END FILE: .agent-workflow/Progress.txt -----
+
+
+----- BEGIN FILE: .agent-workflow/progress/README.md -----
+# Progress.d — Per-Task Evidence Logs
+
+Goal: avoid merge conflicts and make multi-agent work observable.
+
+Convention:
+- Each task writes to its own file:
+  - `.agent-workflow/progress/<task-id>.<agent>.md`
+  - Example: `.agent-workflow/progress/WG-012.tester.md`
+
+Rules:
+- Subagents do **not** edit `Progress.txt` directly.
+- Sisyphus (or Integrator) periodically merges key evidence into `Progress.txt`.
+
+Minimal evidence block (copy/paste):
+
+```text
+# <task-id> — <short title>
+Owner: <agent>
+Date: <YYYY-MM-DD>
+
+Commands run:
+- <cmd>
+
+Outcome:
+- PASS/FAIL
+
+Notes:
+- <1-5 bullets>
+```
+----- END FILE: .agent-workflow/progress/README.md -----
+
+
+----- BEGIN FILE: .agent-workflow/progress_summary.md -----
+# progress_summary.md (active memory)  <!-- Sisyphus Audit: Context Bloat -->
+
+Last updated: 2026-01-29
+
+STATE OF TRUTH (keep short)
+
+Verified (facts)
+- (none yet)
+
+Active bugs / unknowns
+- (none)
+
+Next slice
+- TBD
+
+Evidence pointers
+- archive/: (empty)
+----- END FILE: .agent-workflow/progress_summary.md -----
+
+
+----- BEGIN FILE: .agent-workflow/README.md -----
+# .agent-workflow (agentic SDLC v4)
+
+Core: slice-first + contract-first + evidence + low operator load.
+
+Keep hot (RAM)
+- `progress_summary.md` (state of truth)
+
+Keep cold (disk)
+- `archive/` (raw logs, screenshots, diffs)
+
+Key files
+- `Conversation_Policy.md` (clarify floor + confidence bypass + decision panels)
+- `09_MASTER_AGENT_PROMPT_SISYPHUS.md`
+- `WorkGraph.json` (tasks + allowed_paths + lock)
+- `scratchpad.md` (interface contract; must be SIGNED before code)
+- `PRD.json` (acceptance tests; passes=true needs evidence)
+- `PRESETS.md` + `presets/` (incl. spike)
+
+Logging rule  <!-- Sisyphus Audit: Context Bloat -->
+- `Progress.txt` is ephemeral; archive + prune every slice.
+----- END FILE: .agent-workflow/README.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Risk_Register.md -----
+# Risk Register 
+
+Track top risks and de-risk early with “early tests”.
+
+## R01 — 
+- Description:
+- Impact: High / Medium / Low
+- Likelihood: High / Medium / Low
+- Early test / mitigation:
+- Owner:
+- Status: open / mitigated / accepted
+
+## R02 — ...
+----- END FILE: .agent-workflow/Risk_Register.md -----
+
+
+----- BEGIN FILE: .agent-workflow/scratchpad.md -----
+# scratchpad.md — Interface Contract (Treaty Before War)  <!-- Sisyphus Audit: Integration Hell -->
+
+Slice/Task:
+Date:
+
+Contract (exact)
+- Entry points:
+  - fn:
+  - args types:
+  - returns:
+- Data formats / schemas:
+- Errors:
+- Example I/O:
+
+Test Plan (for this contract)
+- minimal contract test(s):
+- negative case(s):
+
+Sign-off
+- SIGNED: implementer =
+- SIGNED: tester =
+----- END FILE: .agent-workflow/scratchpad.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Skills_Learned.md -----
+# Skills_Learned.md (prunable) — agentic SDLC v4
+
+Keep max ~15 bullets. Delete stale.
+
+Rules that pay rent
+- If Low Risk + conf>0.95: Intent → do → quick check → log (no questions).
+- If stuck after 2 patches: stop; reclassify harness/spec/repro (SOP-005).
+- Contract-first prevents integration mismatches: keep `scratchpad.md` signed.
+- Prefer 1 failing test cmd; avoid full-suite spam.
+- Progress.txt is toxic to context: archive+prune each slice.
+- UI “tests pass but broken”: require at least 1 Playwright smoke screenshot/trace for critical flows.
+----- END FILE: .agent-workflow/Skills_Learned.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/README.md -----
+# SOPs (agentic SDLC v4)
+
+Rule: before asking user, search here for a matching SOP.
+
+Index
+- SOP-001 Decision Panels (ask UX)
+- SOP-002 Confidence Bypass (low-risk edits)
+- SOP-003 Delta State Archiving (context bloat)
+- SOP-004 Interface Treaty (implementer+tester contract)
+- SOP-005 Convergence Ladder (fix-break-fix loop)
+- SOP-006 Test Selection (fast loop)
+- SOP-007 SOTA Playbook (why these rules)
+
+----- END FILE: .agent-workflow/SOPs/README.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-001_decision_panels.md -----
+# SOP-001 Decision Panels
+
+Use when you must ask the operator.
+
+Prefer: OpenCode `question` tool (multi-choice).
+Fallback: text panel.
+
+Text panel template:
+DECISION PANEL
+TAB: Scope
+A (rec) ...
+B ...
+TAB: Verify
+A (rec) ...
+B ...
+TAB: Risk
+A (rec) ...
+B ...
+Operator replies: `S-A, V-B, R-A`
+----- END FILE: .agent-workflow/SOPs/SOP-001_decision_panels.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-002_confidence_bypass.md -----
+# SOP-002 Confidence Bypass  <!-- Sisyphus Audit: Operator Fatigue -->
+
+If Low Risk + confidence >0.95:
+- announce Intent (what + files)
+- do change
+- run cheapest relevant check (lint/typecheck or quick UI smoke)
+- log in progress_summary
+----- END FILE: .agent-workflow/SOPs/SOP-002_confidence_bypass.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-003_delta_state_archiving.md -----
+# SOP-003 Delta State Archiving  <!-- Sisyphus Audit: Context Bloat -->
+
+Active memory = `progress_summary.md`
+Raw logs = `Progress.txt` (ephemeral)
+
+On slice finish:
+1) update `progress_summary.md` (Verified + Bugs + Next)
+2) move raw logs to `.agent-workflow/archive/<ts>_<slice_id>/`
+3) clear `Progress.txt`
+----- END FILE: .agent-workflow/SOPs/SOP-003_delta_state_archiving.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-004_interface_treaty.md -----
+# SOP-004 Interface Treaty  <!-- Sisyphus Audit: Integration Hell -->
+
+Before Implementer + Test Engineer split:
+- co-author `.agent-workflow/scratchpad.md`
+- lock exact interface contract:
+  - function signatures
+  - payload types / schemas
+  - error shapes
+  - sample I/O
+- sign: `SIGNED: implementer, tester`
+No implementation before SIGNED.
+----- END FILE: .agent-workflow/SOPs/SOP-004_interface_treaty.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-005_convergence_ladder.md -----
+# SOP-005 Convergence Ladder (stop fix-break-fix)
+
+Goal: converge fast, avoid random patch loops.
+
+0) Repro: single cmd that fails (copy/paste runnable)
+1) Localize: failing file/line/test
+2) Hypothesis: 1 root cause
+3) Patch: minimal diff
+4) Verify: rerun failing cmd + 1 nearby test
+Stop rules:
+- 2 failed patches -> switch mode:
+  A) harness problem
+  B) spec/contract mismatch
+  C) missing repro
+Escalate with a DECISION PANEL.
+----- END FILE: .agent-workflow/SOPs/SOP-005_convergence_ladder.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-006_test_selection.md -----
+# SOP-006 Test Selection (speed)
+
+Default loop:
+- run the **one failing** test (grep/target)
+- then run **fast suite** if it exists
+Full suite only when:
+- integration boundary changed
+- release/demo gate
+- prior failures suggest hidden coupling
+Evidence can be: console output + file path.
+----- END FILE: .agent-workflow/SOPs/SOP-006_test_selection.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-007_sota_playbook.md -----
+# SOP-007 SOTA Playbook (agentic SDLC v4)
+
+Why: align workflow w/ what works in public SWE-agent systems.
+
+Observed patterns → v4 mapping
+- Eval harness + reproducible bugs (SWE-bench) → PRD acceptance_tests + evidence gate
+- Agent-computer interface / constrained actions (SWE-agent) → `allowed_paths` + contract-first `scratchpad.md`
+- Multi-agent role decomposition (MetaGPT) → Implementer/Test/Integrator/Adversarial separation
+- Critic + inference-time scaling (OpenHands) → Adversarial Reviewer + stop rules + 2-patch ladder
+- Context/memory mgmt → `progress_summary.md` (RAM) + `archive/` (disk)
+
+Refs
+- SWE-bench: https://www.swebench.com/
+- SWE-agent (arXiv): https://arxiv.org/abs/2405.15793
+- MetaGPT (arXiv): https://arxiv.org/abs/2308.00352
+- OpenHands SOTA on SWE-bench Verified: https://www.all-hands.dev/blog/sota-on-swe-bench-verified-with-inference-time-scaling
+----- END FILE: .agent-workflow/SOPs/SOP-007_sota_playbook.md -----
+
+
+----- BEGIN FILE: .agent-workflow/SOPs/SOP-008_docs_first_gate.md -----
+# SOP-008 — Docs-First Gate (Kloss Canonical Docs)
+
+Purpose
+- Prevent hallucinations and architectural drift by forcing a single source of truth.
+
+Gate rule (non-negotiable)
+- No implementation work begins until these docs exist (even minimal) AND are referenced in the Task Packet:
+  1) Product_Description.md
+  2) PRD.md + PRD.json
+  3) APP_FLOW.md
+  4) TECH_STACK.md
+  5) FRONTEND_GUIDELINES.md
+  6) BACKEND_STRUCTURE.md
+  7) IMPLEMENTATION_PLAN.md
+
+Operator interaction
+- Ask A/B/C/D questions if any doc is missing or ambiguous.
+
+Evidence
+- Each slice must log:
+  - doc versions referenced
+  - verification command(s)
+  - output paths/screenshots/logs
+----- END FILE: .agent-workflow/SOPs/SOP-008_docs_first_gate.md -----
+
+
+----- BEGIN FILE: .agent-workflow/TECH_STACK.md -----
+<!-- Start here: copy from 16_TECH_STACK.template.md and fill for your project. -->
+----- END FILE: .agent-workflow/TECH_STACK.md -----
+
+
+----- BEGIN FILE: .agent-workflow/Test_Plan.md -----
+# Test Plan (agentic SDLC v4)
+
+Goal: fast loop, real confidence.
+
+Layers (only as needed)
+1) Targeted test (the failing one)
+2) Fast suite (feature-focused, 50–70% coverage)
+3) Boundary/contract tests (schemas, types)
+4) Integration/system tests (critical flows)
+5) UI smoke (Playwright screenshot on failure)
+
+Default loop (small bug)
+- reproduce in 1 cmd
+- fix
+- rerun same cmd
+- run fast suite (if exists)
+
+Full suite only when
+- integration boundary changed
+- release/demo gate
+- repeated weird failures (possible hidden coupling)
+
+Evidence
+- cmd + output (log path ok)
+- UI: attach Playwright trace/screenshot when possible
+----- END FILE: .agent-workflow/Test_Plan.md -----
+
+
+----- BEGIN FILE: .agent-workflow/tools/render_workgraph.mjs -----
+#!/usr/bin/env node
+/**
+ * render_workgraph.mjs
+ *
+ * Generates a compact, ASCII-friendly view of `.agent-workflow/WorkGraph.json`.
+ *
+ * Usage:
+ *   node .agent-workflow/tools/render_workgraph.mjs
+ *   node .agent-workflow/tools/render_workgraph.mjs --input .agent-workflow/WorkGraph.json --output .agent-workflow/WorkGraph_visualize.md
+ */
+
+import fs from "fs";
+import path from "path";
+
+function parseArgs(argv) {
+  const args = { input: ".agent-workflow/WorkGraph.json", output: ".agent-workflow/WorkGraph_visualize.md" };
+  for (let i = 2; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === "--input" && argv[i + 1]) args.input = argv[++i];
+    else if (a === "--output" && argv[i + 1]) args.output = argv[++i];
+  }
+  return args;
+}
+
+function pad(s, n) {
+  const str = String(s ?? "");
+  return str.length >= n ? str.slice(0, n) : str + " ".repeat(n - str.length);
+}
+
+function nowIso() {
+  return new Date().toISOString();
+}
+
+function safeReadJson(filePath) {
+  const raw = fs.readFileSync(filePath, "utf8");
+  return JSON.parse(raw);
+}
+
+function normalizeStatus(status) {
+  const st = String(status || "unknown").toLowerCase().trim();
+  if (["working_on", "working", "in_progress", "inprogress", "active"].includes(st)) return "working";
+  if (["blocked", "stalled"].includes(st)) return "blocked";
+  if (["planned", "ready", "queued", "todo", "backlog"].includes(st)) return "planned";
+  if (["completed", "done", "finished", "merged"].includes(st)) return "done";
+  if (["cancelled", "canceled", "dropped"].includes(st)) return "cancelled";
+  return st || "unknown";
+}
+
+function statusBadge(status) {
+  const st = normalizeStatus(status);
+  switch (st) {
+    case "planned": return "P";
+    case "working": return "W";
+    case "blocked": return "B";
+    case "done": return "D";
+    case "cancelled": return "X";
+    default: return "?";
+  }
+}
+
+function summarizeStatuses(tasks) {
+  const counts = {};
+  for (const t of tasks) {
+    const st = normalizeStatus(t.status);
+    counts[st] = (counts[st] || 0) + 1;
+  }
+  return counts;
+}
+
+function truncateTitle(title, maxLen) {
+  const s = String(title ?? "");
+  return s.length > maxLen ? s.slice(0, Math.max(0, maxLen - 1)) + "…" : s;
+}
+
+function main() {
+  const { input, output } = parseArgs(process.argv);
+
+  const inPath = path.resolve(process.cwd(), input);
+  const outPath = path.resolve(process.cwd(), output);
+
+  const wg = safeReadJson(inPath);
+  const tasks = Array.isArray(wg.tasks) ? wg.tasks : [];
+
+  const counts = summarizeStatuses(tasks);
+
+  // Stable sort: working -> blocked -> planned -> done -> cancelled -> unknown, then id
+  const order = { working: 0, blocked: 1, planned: 2, done: 3, cancelled: 4, unknown: 5 };
+  const sorted = [...tasks].sort((a, b) => {
+    const sa = normalizeStatus(a.status);
+    const sb = normalizeStatus(b.status);
+    const oa = order[sa] ?? 9;
+    const ob = order[sb] ?? 9;
+    if (oa !== ob) return oa - ob;
+    return String(a.id || "").localeCompare(String(b.id || ""));
+  });
+
+  const lines = [];
+  lines.push(`# WorkGraph_visualize.md (auto-generated)`);
+  lines.push("");
+  lines.push(`Generated: ${nowIso()}`);
+  if (wg.meta?.project) lines.push(`Project: ${wg.meta.project}`);
+  if (wg.meta?.slice_lock_id) lines.push(`Slice: ${wg.meta.slice_lock_id}`);
+  lines.push("");
+  lines.push("Legend: [P]=planned [W]=working [B]=blocked [D]=done [X]=cancelled [?]=unknown");
+  lines.push("");
+
+  // Summary line
+  const summaryParts = Object.entries(counts)
+    .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+    .map(([k, v]) => `${k}:${v}`);
+  lines.push(`Status counts: ${summaryParts.join(" | ") || "none"}`);
+  lines.push("");
+
+  const header = `${pad("ID", 10)} ${pad("S", 2)} ${pad("Agent", 14)} ${pad("Title", 64)} ${pad("Deps", 24)}`;
+  const sep = "-".repeat(header.length);
+  lines.push("```text");
+  lines.push(header);
+  lines.push(sep);
+  for (const t of sorted) {
+    const deps = Array.isArray(t.depends_on) ? t.depends_on.join(",") : "";
+    const agent = t.owner_agent || t.agent || t.assigned_to || "";
+    const row = `${pad(t.id, 10)} ${pad(statusBadge(t.status), 2)} ${pad(agent, 14)} ${pad(truncateTitle(t.title, 64), 64)} ${pad(deps, 24)}`;
+    lines.push(row);
+  }
+  lines.push("```");
+  lines.push("");
+
+  lines.push("Notes:");
+  lines.push("- Edit `.agent-workflow/WorkGraph.json` (source of truth).");
+  lines.push("- Re-render with: `node .agent-workflow/tools/render_workgraph.mjs`");
+
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, lines.join("\n"), "utf8");
+
+  process.stdout.write(`Wrote ${output}\n`);
+}
+
+main();
+----- END FILE: .agent-workflow/tools/render_workgraph.mjs -----
+
+
+----- BEGIN FILE: .agent-workflow/Workflow_Isolation.md -----
+# Workflow Isolation Protocol
+
+When running multiple parallel workflows (e.g., frontend + backend simultaneously), use folder-based isolation to prevent log bottlenecks and merge conflicts.
+
+---
+
+## Directory Structure
+
+```
+.agent-workflow/
+├── workflows/
+│   ├── {workflow-id}/
+│   │   ├── Progress.txt        # Workflow-specific log (ephemeral; archive+prune)
+│   │   ├── WorkGraph.json      # Workflow-specific tasks (optional)
+│   │   └── context.md          # Workflow context/goals
+│   ├── wf-frontend-ui/
+│   │   ├── Progress.txt
+│   │   └── context.md
+│   └── wf-backend-secure/
+│       ├── Progress.txt
+│       └── context.md
+├── Progress.txt                 # Main log (merged from workflows)
+├── WorkGraph.json               # Master task graph
+└── ...
+```
+
+---
+
+## Workflow Lifecycle
+
+### 1. Create Workflow
+When starting isolated work:
+
+```bash
+mkdir -p .agent-workflow/workflows/wf-{name}
+```
+
+**context.md template:**
+```markdown
+# Workflow: wf-{name}
+Created: [date]
+Owner: [agent]
+Parent slice: [slice name or "independent"]
+
+## Goals
+- [goal 1]
+- [goal 2]
+
+## Scope (allowed_paths)
+- path/to/files/
+- another/path/
+
+## Exit criteria
+- [ ] [criterion 1]
+- [ ] [criterion 2]
+
+## Dependencies
+- Blocked by: [WG-XXX or "none"]
+- Blocks: [WG-YYY or "none"]
+```
+
+### 2. Work Within Workflow
+Agents working in an isolated workflow:
+- Write to `workflows/{id}/Progress.txt` (not root Progress.txt)
+- Reference workflow ID in all commits/messages: `[wf-{name}]`
+- Stay within declared `allowed_paths`
+
+### 3. Merge Workflow
+When workflow completes:
+
+```bash
+# Append to main Progress.txt
+echo "## Workflow Merge: wf-{name}" >> .agent-workflow/Progress.txt
+cat .agent-workflow/workflows/wf-{name}/Progress.txt >> .agent-workflow/Progress.txt
+
+# Archive
+mv .agent-workflow/workflows/wf-{name} .agent-workflow/workflows/archived/
+```
+
+---
+
+## Workflow Naming Convention
+
+| Prefix | Meaning | Example |
+|--------|---------|---------|
+| `wf-frontend-` | Frontend work | `wf-frontend-note-import` |
+| `wf-backend-` | Backend/contract work | `wf-backend-secure-borrow` |
+| `wf-infra-` | Infrastructure/tooling | `wf-infra-ci-setup` |
+| `wf-research-` | Research/spike | `wf-research-zk-alternatives` |
+| `wf-hotfix-` | Urgent fix | `wf-hotfix-tx-size` |
+
+---
+
+## Collision Rules
+
+1. **One agent per workflow**: A workflow is owned by one agent at a time.
+2. **No cross-workflow edits**: Agents must not edit files outside their workflow's `allowed_paths`.
+3. **Sync via orchestrator**: If workflow A needs something from workflow B, request via `@sisyphus`.
+4. **Merge before handoff**: Complete workflows must be merged before another agent continues.
+
+---
+
+## Operator Commands
+
+| Command | Effect |
+|---------|--------|
+| `/workflow create {name}` | Create new workflow folder |
+| `/workflow list` | Show active workflows |
+| `/workflow merge {name}` | Merge workflow to main Progress.txt |
+| `/workflow delete {name}` | Delete workflow (requires confirmation) |
+----- END FILE: .agent-workflow/Workflow_Isolation.md -----
+
+
+----- BEGIN FILE: .agent-workflow/WorkGraph.json -----
+{
+  "tasks": [],
+  "meta": {
+    "project": "YourProject",
+    "last_updated": "2026-01-29",
+    "workflow": "agentic SDLC v4"
+  },
+  "rules": {
+    "status_values": [
+      "planned",
+      "working_on",
+      "blocked",
+      "completed",
+      "cancelled"
+    ],
+    "lock_rule": "Only one agent per task with status=working_on",
+    "paired_execution": {
+      "enabled": true,
+      "contract_file": ".agent-workflow/scratchpad.md",
+      "required_for": [
+        "implementer",
+        "tester",
+        "integrator"
+      ],
+      "signoff_marker": "SIGNED:",
+      "rule": "No implementation/test code until contract signed by implementer+tester."
+    },
+    "delta_state": {
+      "active_memory": ".agent-workflow/progress_summary.md",
+      "raw_log": ".agent-workflow/Progress.txt",
+      "archive_dir": ".agent-workflow/archive/"
+    }
+  }
+}
+----- END FILE: .agent-workflow/WorkGraph.json -----
+
+
+----- BEGIN FILE: AGENTS.md -----
+# AGENTS.md (repo root) — agentic SDLC v4
+
+Workflow lives in `.agent-workflow/`.
+
+Start:
+- `.agent-workflow/AGENTS.md`
+- `.agent-workflow/progress_summary.md`
+----- END FILE: AGENTS.md -----
+
+
+----- BEGIN FILE: README.md -----
+# agentic SDLC v4 workflow bundle
+
+Drop `.agent-workflow/` into your repo root.
+----- END FILE: README.md -----
+
+
+=== SKIP SUMMARY (first 300) ===
+.DS_Store | excluded by pattern
