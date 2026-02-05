@@ -12,6 +12,12 @@ Each view contains 3 Mermaid diagrams:
 
 If you want everything in one place, see `SDLC_Final_3x3.md`.
 
+## Workflow Synthesize
+
+Additional synthesized workflows and sources live under:
+
+- [Workflow Synthesize](Workflow%20Synthesize/README.md)
+
 ---
 
 ## Quick Selector Guide
