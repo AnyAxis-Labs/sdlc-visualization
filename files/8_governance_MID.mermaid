@@ -1,0 +1,79 @@
+graph TB
+    classDef p1 fill:#FFE6E6,stroke:#CC0000,stroke-width:2px,color:#000
+    classDef p2 fill:#E6F3FF,stroke:#0066CC,stroke-width:2px,color:#000
+    classDef p3 fill:#E6FFE6,stroke:#00CC00,stroke-width:2px,color:#000
+    classDef p4 fill:#FFF4E6,stroke:#FF9900,stroke-width:2px,color:#000
+    classDef p5 fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px,color:#000
+    classDef p6 fill:#F0E6FF,stroke:#6600CC,stroke-width:2px,color:#000
+    classDef p7 fill:#E6FFFF,stroke:#00CCCC,stroke-width:2px,color:#000
+    classDef p8 fill:#FFFACD,stroke:#FFD700,stroke-width:2px,color:#000
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+
+    subgraph INPUT["INPUT ARTIFACTS"]
+        VM["CEO Voice Memo"]:::p1
+        CR["Client Requirements"]:::p1
+    end
+
+    subgraph PLANNING["PLANNING ARTIFACTS"]
+        CH["Project Charter"]:::p1
+        SB["Solution Brief"]:::p1
+        US["User Stories"]:::p2
+        PRD["PRD.md + PRD.json"]:::p3
+        ADR["ADRs - Architecture Decisions"]:::p3
+        C4D["C4 Diagrams"]:::p3
+        IP["Implementation Plan"]:::p3
+    end
+
+    subgraph DEVELOPMENT["DEVELOPMENT ARTIFACTS"]
+        SC["scratchpad.md - Interface Contract"]:::p4
+        SRC["Source Code - Backend + Frontend"]:::p4
+        TESTS["Test Suite - Unit + Integration"]:::p4
+        API["API Contracts"]:::p4
+        BENCH["Benchmarks"]:::p4
+    end
+
+    subgraph EVIDENCE["EVIDENCE ARTIFACTS"]
+        TR["Test Reports"]:::p5
+        COV["Coverage Metrics"]:::p5
+        BEP["Bug Evidence Packs"]:::p5
+        PROG["Progress.txt - Evidence Log"]:::p5
+    end
+
+    subgraph PRODUCTION["PRODUCTION ARTIFACTS"]
+        LOGS["Application Logs"]:::p7
+        DASH["Metrics Dashboards"]:::p7
+        INC["Incident Reports"]:::p7
+        SLA["SLA Reports"]:::p7
+    end
+
+    subgraph LEARNING["LEARNING ARTIFACTS"]
+        LES["Lessons Learned"]:::p8
+        SOPU["SOP Updates"]:::p8
+        SKILLS["Skills_Learned.md"]:::p8
+        ROAD["Roadmap Draft"]:::p8
+    end
+
+    G1{"Gate 1\nCEO + PO"}:::gate
+    G2{"Gate 2\nArch Review"}:::gate
+    G3{"Gate 3\nQA Signoff"}:::gate
+    G4{"Gate 4\nGo/No-Go"}:::gate
+    G5{"Gate 5\nWeekly Review"}:::gate
+
+    VM & CR --> CH & SB
+    CH --> G1
+    G1 --> US --> PRD
+    PRD --> ADR & C4D
+    ADR --> G2
+    G2 --> IP --> SC --> SRC
+    SRC --> TESTS --> API
+    TESTS --> TR & COV
+    TR --> G3
+    G3 --> BEP
+    BENCH --> G4
+    G4 --> LOGS & DASH
+    LOGS --> INC --> SLA
+    SLA --> G5
+    G5 --> LES --> SOPU & SKILLS
+    SOPU -.->|"Improve"| CH
+    BEP -.->|"Fix"| SRC
+    ROAD -.->|"Next Feature"| VM

@@ -1,0 +1,18 @@
+graph LR
+    classDef art fill:#3B82F6,color:#fff,stroke:#2563EB,stroke-width:2px
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+    classDef evid fill:#F59E0B,color:#000,stroke:#D97706,stroke-width:2px
+    classDef feed fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
+
+    IN["INPUT\nVision + Requirements"]:::art
+    PLAN["PLANNING ARTIFACTS\nCharter + PRD + ADRs"]:::art
+    G1{"GATE\nScope + Design Approval"}:::gate
+    CODE["CODE ARTIFACTS\nSource + Tests + Docs"]:::art
+    EVID["EVIDENCE\nTest Reports + Metrics"]:::evid
+    G2{"GATE\nQA + Deploy Approval"}:::gate
+    PROD["PRODUCTION\nLogs + Dashboards"]:::art
+    LEARN["LEARNING\nRetro + SOP Updates"]:::feed
+
+    IN ==> PLAN ==> G1 ==> CODE ==> EVID ==> G2 ==> PROD ==> LEARN
+    LEARN -.->|"Improve Process"| PLAN
+    EVID -.->|"Fix Bugs"| CODE
