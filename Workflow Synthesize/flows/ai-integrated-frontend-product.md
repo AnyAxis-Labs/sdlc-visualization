@@ -65,18 +65,23 @@ graph TB
     subgraph Phase_0_Ideation
         Idea["Business Idea"]
         Research["Competitor + User Research"]
+        Personas["Personas + JTBD"]
         Flows["User Flow Draft"]
         Prompt["Prompt Engineering"]
+        Wire["Wireframes"]
         Draft["AI Design Draft"]
-        Idea --> Research --> Flows --> Prompt --> Draft
+        Tokens["Design Tokens"]
+        Idea --> Research --> Personas --> Flows --> Prompt --> Wire --> Draft --> Tokens
     end
 
     subgraph Phase_1_PreCoding
         Stack["Select Framework + Stack"]
         Structure["Repo + Folder Structure"]
+        Tooling["Lint + Formatting"]
         Rules["Coding Rules + Style"]
         PerfBudget["Performance Budget"]
-        Stack --> Structure --> Rules --> PerfBudget
+        A11y["Accessibility Baseline"]
+        Stack --> Structure --> Tooling --> Rules --> PerfBudget --> A11y
     end
 
     subgraph Phase_2_Planning_Coding
@@ -84,15 +89,17 @@ graph TB
         Components["Atomic Components"]
         State["State + Data Layer"]
         API["API Integration"]
+        Routes["Routing + Guards"]
         Build["Feature Implementation"]
-        System --> Components --> State --> API --> Build
+        System --> Components --> State --> API --> Routes --> Build
     end
 
     subgraph Phase_3_Testing
         Unit["Unit Tests"]
         E2E["E2E Tests"]
+        Perf["Performance Tests"]
         QA["QA Review"]
-        Unit --> E2E --> QA
+        Unit --> E2E --> Perf --> QA
     end
 
     subgraph Phase_4_Deploy_Optimize
@@ -104,8 +111,8 @@ graph TB
         Review --> Staging --> Prod --> Monitor --> Optimize
     end
 
-    Draft --> Stack
-    PerfBudget --> System
+    Tokens --> Stack
+    A11y --> System
     Build --> Unit
     QA --> Review
 ```

@@ -76,9 +76,10 @@ graph TB
         CEO["CEO Voice/Notes"]
         Transcribe["OpenClaw Transcription"]
         Charter["Project Charter"]
-        PRFAQ["Solution Brief + PRFAQ"]
+        Brief["Solution Brief + PRFAQ"]
+        Constraints["Constraints + Non-goals"]
         Review1["PO + CEO Review"]
-        CEO --> Transcribe --> Charter --> PRFAQ --> Review1
+        CEO --> Transcribe --> Charter --> Brief --> Constraints --> Review1
     end
 
     subgraph Phase_2_Research
@@ -87,6 +88,7 @@ graph TB
         Ora["Oracle: Architecture Analysis"]
         Exp["Explore: Codebase Search"]
         Stories["User Stories + Milestones"]
+        Spikes["Tech Spikes"]
         Repo["Repo + Branch Protections"]
         Orchestrate --> Lib
         Orchestrate --> Ora
@@ -94,23 +96,26 @@ graph TB
         Lib --> Stories
         Ora --> Stories
         Exp --> Stories
-        Stories --> Repo
+        Stories --> Spikes --> Repo
     end
 
     subgraph Phase_3_Design
         ADRs["ADRs + C4 Diagrams"]
+        NFR["NFR Targets"]
         API["API Contracts"]
+        Threat["Threat Model"]
         UX["UX/Flow Guidelines"]
         Review2["Architecture Review"]
-        ADRs --> API --> UX --> Review2
+        ADRs --> NFR --> API --> Threat --> UX --> Review2
     end
 
     subgraph Phase_4_Development
         Tasks["Task Breakdown"]
         Implement["Implementation"]
         Tests["Unit + Integration Tests"]
-        CI["CI Gates + Review"]
-        Tasks --> Implement --> Tests --> CI
+        PRs["PRs + Code Review"]
+        CI["CI Gates"]
+        Tasks --> Implement --> Tests --> PRs --> CI
     end
 
     subgraph Phase_5_QA
@@ -118,36 +123,40 @@ graph TB
         Exec["Test Execution"]
         Evidence["Evidence Pack"]
         Triage["Bug Triage"]
-        TestPlan --> Exec --> Evidence --> Triage
+        Fixes["Fix Verification"]
+        TestPlan --> Exec --> Evidence --> Triage --> Fixes
     end
 
     subgraph Phase_6_Deploy
         Staging["Staging Deploy"]
         Checklist["Release Checklist"]
+        Rollback["Rollback Plan"]
         Prod["Production Deploy"]
         Notes["Release Notes"]
-        Staging --> Checklist --> Prod --> Notes
+        Staging --> Checklist --> Rollback --> Prod --> Notes
     end
 
     subgraph Phase_7_Monitor
         Alerts["Monitoring + Alerts"]
         Incidents["Incident Response"]
+        Postmortem["Postmortem"]
         Hotfix["Hotfix + Verification"]
-        Alerts --> Incidents --> Hotfix
+        Alerts --> Incidents --> Postmortem --> Hotfix
     end
 
     subgraph Phase_8_Maintenance
         Retro["Retrospective"]
         Backlog["Improvement Backlog"]
+        SOP["SOP Updates"]
         Change["Change Control"]
-        Retro --> Backlog --> Change
+        Retro --> Backlog --> SOP --> Change
     end
 
     Review1 --> Orchestrate
     Repo --> ADRs
     Review2 --> Tasks
     CI --> TestPlan
-    Triage --> Staging
+    Fixes --> Staging
     Notes --> Alerts
     Hotfix --> Retro
 ```
