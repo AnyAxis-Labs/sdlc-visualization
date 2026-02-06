@@ -2,355 +2,295 @@
 
 What moves through the system as artifacts, and who approves each gate.
 
-## 🔭 LEVEL HIGH (6 components)
+This version preserves the prior governance perspective (artifact lineage and approvals) while upgrading content to the latest Mermaid definitions from `files/`.
+
+## LEVEL HIGH
 
 ```mermaid
 graph LR
-    Vision["📝 VISION<br/>Ideas"]
-    Design["🏗️ DESIGN<br/>Architecture"]
-    Code["💾 CODE<br/>Software"]
-    Prod["🚀 PRODUCTION<br/>Live"]
-    Learn["📚 LESSONS<br/>Improve"]
-    
-    Vision ==>|Gate:<br/>CEO+PO| Design
-    Design ==>|Gate:<br/>Arch Review| Code
-    Code ==>|Gate:<br/>QA+DevOps| Prod
-    Prod ==>|Gate:<br/>Weekly| Learn
-    Learn -.Next.-> Vision
-    
-    style Vision fill:#FFB6C1,stroke:#CC0066,stroke-width:4px
-    style Design fill:#E6FFE6,stroke:#00AA00,stroke-width:4px
-    style Code fill:#FFF4E6,stroke:#FF9900,stroke-width:4px
-    style Prod fill:#90EE90,stroke:#008800,stroke-width:4px
-    style Learn fill:#FFFACD,stroke:#FFD700,stroke-width:4px
+    classDef art fill:#3B82F6,color:#fff,stroke:#2563EB,stroke-width:2px
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+    classDef evid fill:#F59E0B,color:#000,stroke:#D97706,stroke-width:2px
+    classDef feed fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
+
+    IN["INPUT\nVision + Requirements"]:::art
+    PLAN["PLANNING ARTIFACTS\nCharter + PRD + ADRs"]:::art
+    G1{"GATE\nScope + Design Approval"}:::gate
+    CODE["CODE ARTIFACTS\nSource + Tests + Docs"]:::art
+    EVID["EVIDENCE\nTest Reports + Metrics"]:::evid
+    G2{"GATE\nQA + Deploy Approval"}:::gate
+    PROD["PRODUCTION\nLogs + Dashboards"]:::art
+    LEARN["LEARNING\nRetro + SOP Updates"]:::feed
+
+    IN ==> PLAN ==> G1 ==> CODE ==> EVID ==> G2 ==> PROD ==> LEARN
+    LEARN -.->|"Improve Process"| PLAN
+    EVID -.->|"Fix Bugs"| CODE
 ```
 
 ---
 
-## 🔬 LEVEL MID (22 components)
+## LEVEL MID
 
 ```mermaid
 graph TB
-    subgraph Input
-        Vis[Vision]
-        Req[Requirements]
+    classDef p1 fill:#FFE6E6,stroke:#CC0000,stroke-width:2px,color:#000
+    classDef p2 fill:#E6F3FF,stroke:#0066CC,stroke-width:2px,color:#000
+    classDef p3 fill:#E6FFE6,stroke:#00CC00,stroke-width:2px,color:#000
+    classDef p4 fill:#FFF4E6,stroke:#FF9900,stroke-width:2px,color:#000
+    classDef p5 fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px,color:#000
+    classDef p6 fill:#F0E6FF,stroke:#6600CC,stroke-width:2px,color:#000
+    classDef p7 fill:#E6FFFF,stroke:#00CCCC,stroke-width:2px,color:#000
+    classDef p8 fill:#FFFACD,stroke:#FFD700,stroke-width:2px,color:#000
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+
+    subgraph INPUT["INPUT ARTIFACTS"]
+        VM["CEO Voice Memo"]:::p1
+        CR["Client Requirements"]:::p1
     end
-    
-    subgraph Planning
-        Ch[Charter]
-        St[Stories]
-        PR[PRD]
+
+    subgraph PLANNING["PLANNING ARTIFACTS"]
+        CH["Project Charter"]:::p1
+        SB["Solution Brief"]:::p1
+        US["User Stories"]:::p2
+        PRD["PRD.md + PRD.json"]:::p3
+        ADR["ADRs - Architecture Decisions"]:::p3
+        C4D["C4 Diagrams"]:::p3
+        IP["Implementation Plan"]:::p3
     end
-    
-    subgraph Design
-        AD[ADRs]
-        C4[C4]
-        IP[Impl Plan]
+
+    subgraph DEVELOPMENT["DEVELOPMENT ARTIFACTS"]
+        SC["scratchpad.md - Interface Contract"]:::p4
+        SRC["Source Code - Backend + Frontend"]:::p4
+        TESTS["Test Suite - Unit + Integration"]:::p4
+        API["API Contracts"]:::p4
+        BENCH["Benchmarks"]:::p4
     end
-    
-    subgraph Development
-        Co[Code]
-        Te[Tests]
-        Ct[Contracts]
+
+    subgraph EVIDENCE["EVIDENCE ARTIFACTS"]
+        TR["Test Reports"]:::p5
+        COV["Coverage Metrics"]:::p5
+        BEP["Bug Evidence Packs"]:::p5
+        PROG["Progress.txt - Evidence Log"]:::p5
     end
-    
-    subgraph Quality
-        TR[Test Reports]
-        Bu[Bugs]
-        Cv[Coverage]
+
+    subgraph PRODUCTION["PRODUCTION ARTIFACTS"]
+        LOGS["Application Logs"]:::p7
+        DASH["Metrics Dashboards"]:::p7
+        INC["Incident Reports"]:::p7
+        SLA["SLA Reports"]:::p7
     end
-    
-    subgraph Deploy
-        St[Staging]
-        Pr[Production]
+
+    subgraph LEARNING["LEARNING ARTIFACTS"]
+        LES["Lessons Learned"]:::p8
+        SOPU["SOP Updates"]:::p8
+        SKILLS["Skills_Learned.md"]:::p8
+        ROAD["Roadmap Draft"]:::p8
     end
-    
-    subgraph Ops
-        Lo[Logs]
-        Me[Metrics]
-        In[Incidents]
-    end
-    
-    subgraph Learning
-        Le[Lessons]
-        SO[SOPs]
-    end
-    
-    Vis --> Ch
-    Req --> Ch
-    Ch -->|G1| St
-    St --> PR
-    PR --> AD
-    AD --> C4
-    C4 -->|G2| IP
-    IP --> Ct
-    Ct --> Co
-    Ct --> Te
-    Co -->|G3| TR
-    Te --> TR
-    TR --> Bu
-    TR -->|G4| St
-    St --> Pr
-    Pr -->|G5| Lo
-    Lo --> Me
-    Me --> In
-    In -->|G6| Le
-    Le --> SO
-    
-    Bu -.Fix.-> Co
-    In -.Hotfix.-> Co
-    SO -.Next.-> Vis
-    
-    style Ch fill:#FFE6E6
-    style AD fill:#E6FFE6
-    style Co fill:#FFF4E6
-    style Pr fill:#90EE90
+
+    G1{"Gate 1\nCEO + PO"}:::gate
+    G2{"Gate 2\nArch Review"}:::gate
+    G3{"Gate 3\nQA Signoff"}:::gate
+    G4{"Gate 4\nGo/No-Go"}:::gate
+    G5{"Gate 5\nWeekly Review"}:::gate
+
+    VM & CR --> CH & SB
+    CH --> G1
+    G1 --> US --> PRD
+    PRD --> ADR & C4D
+    ADR --> G2
+    G2 --> IP --> SC --> SRC
+    SRC --> TESTS --> API
+    TESTS --> TR & COV
+    TR --> G3
+    G3 --> BEP
+    BENCH --> G4
+    G4 --> LOGS & DASH
+    LOGS --> INC --> SLA
+    SLA --> G5
+    G5 --> LES --> SOPU & SKILLS
+    SOPU -.->|"Improve"| CH
+    BEP -.->|"Fix"| SRC
+    ROAD -.->|"Next Feature"| VM
 ```
 
 ---
 
-## 🔍 LEVEL LOW (55+ components)
+## LEVEL LOW
 
 ```mermaid
 graph TB
-    subgraph INPUT["━━━ INPUT ARTIFACTS ━━━"]
-        VM[CEO Voice Memo]
-        CR[Client Requirements]
+    classDef p1 fill:#FFE6E6,stroke:#CC0000,stroke-width:2px,color:#000
+    classDef p2 fill:#E6F3FF,stroke:#0066CC,stroke-width:2px,color:#000
+    classDef p3 fill:#E6FFE6,stroke:#00CC00,stroke-width:2px,color:#000
+    classDef p4 fill:#FFF4E6,stroke:#FF9900,stroke-width:2px,color:#000
+    classDef p5 fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px,color:#000
+    classDef p6 fill:#F0E6FF,stroke:#6600CC,stroke-width:2px,color:#000
+    classDef p7 fill:#E6FFFF,stroke:#00CCCC,stroke-width:2px,color:#000
+    classDef p8 fill:#FFFACD,stroke:#FFD700,stroke-width:2px,color:#000
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+    classDef wg fill:#1E293B,color:#94A3B8,stroke:#334155
+
+    subgraph INP["INPUT"]
+        VM["CEO Voice Memo"]:::p1
+        CR["Client Feature Requests"]:::p1
+        TG["Telegram Messages"]:::p1
     end
-    
-    subgraph P1_ART["━━━ PHASE 1: INITIATION ARTIFACTS ━━━"]
-        Trans[Transcription<br/>OpenClaw Output]
-        Opus[Opus Analysis]
-        Ch1[Charter v1]
-        Ch2[Charter v2<br/>After CEO Review]
-        SB[Solution Brief]
-        PRFAQ[PRFAQ Doc]
+
+    subgraph PH1_ART["PHASE 1 ARTIFACTS"]
+        TRANS["OpenClaw Transcription"]:::p1
+        OPUS["Opus 4.5 Analysis Output"]:::p1
+        CH1["Project Charter v1"]:::p1
+        CH2["Project Charter v2 after review"]:::p1
+        SB["Solution Brief"]:::p1
+        PRFAQ["PRFAQ Draft"]:::p1
     end
-    
-    subgraph P2_ART["━━━ PHASE 2: RESEARCH ARTIFACTS ━━━"]
-        LR[Librarian<br/>Report]
-        OA[Oracle<br/>Analysis]
-        SR[Synthesized<br/>Research]
-        US[User<br/>Stories]
-        GH[GitHub<br/>Repo]
-        LA[Lark<br/>Project]
+
+    subgraph PH2_ART["PHASE 2 ARTIFACTS"]
+        LREP["Librarian Research Report"]:::p2
+        OANL["Oracle Architecture Analysis"]:::p2
+        EFND["Codebase Analysis Findings"]:::p2
+        SYNTH["Synthesized Research"]:::p2
+        US["User Stories"]:::p2
+        GHREPO["GitHub Repo + AGENTS.md"]:::p2
+        LARK["Lark Workspace + Templates"]:::p2
     end
-    
-    subgraph P3_ART["━━━ PHASE 3: ARCHITECTURE ARTIFACTS ━━━"]
-        direction TB
-        PRD[prd.md]
-        
-        subgraph ADR_Group["ADR Documents"]
-            ADR1[ADR-001]
-            ADR2[ADR-002]
-            ADRN[ADR-00N]
+
+    subgraph PH3_ART["PHASE 3 ARTIFACTS"]
+        subgraph ADR_GRP["ADR Documents"]
+            ADR1["ADR-001"]:::p3
+            ADR2["ADR-002"]:::p3
+            ADRN["ADR-00N"]:::p3
         end
-        
-        subgraph C4_Group["C4 Diagrams"]
-            C4C[C4 Context]
-            C4Co[C4 Container]
-            C4Cp[C4 Component]
+        subgraph C4_GRP["C4 Diagrams"]
+            C4X["C4 Context"]:::p3
+            C4CO["C4 Container"]:::p3
+            C4CP["C4 Component"]:::p3
         end
-        
-        CS1[current_state v1]
-        HC[Hardening<br/>Critiques]
-        CS2[current_state v2<br/>Final]
-        IMP[Implementation<br/>Plan]
+        PRDMD["PRD.md"]:::p3
+        PRDJ["PRD.json with acceptance tests"]:::p3
+        CS1["current_state.md v1"]:::p3
+        HARD["Hardening Critiques"]:::p3
+        CS2["current_state.md v2"]:::p3
+        IMP["Implementation Plan"]:::p3
     end
-    
-    subgraph P4_ART["━━━ PHASE 4: IMPLEMENTATION ARTIFACTS ━━━"]
-        direction TB
-        Scr[scratchpad.md<br/>Contracts]
-        
-        subgraph Code_Group["Source Code"]
-            BEC[Backend<br/>Code]
-            FEC[Frontend<br/>Code]
-            API[API<br/>Contracts]
+
+    subgraph PH4_ART["PHASE 4 ARTIFACTS"]
+        subgraph CONTRACT["Interface Contract"]
+            SCRATCH["scratchpad.md"]:::p4
+            SIGNED["SIGNED by Impl + Tester"]:::p4
         end
-        
-        subgraph Test_Group["Test Suite"]
-            UT[Unit<br/>Tests]
-            IT[Integration<br/>Tests]
-            ET[E2E<br/>Tests]
+        subgraph CODE_GRP["Source Code"]
+            BEC["Backend Code - FastAPI"]:::p4
+            FEC["Frontend Code"]:::p4
+            APIC["API Contracts"]:::p4
         end
-        
-        subgraph Evidence_Group["Evidence"]
-            Bench[Benchmarks]
-            Prog[Progress.txt]
-            ProgSum[progress<br/>summary.md]
+        subgraph TEST_GRP["Test Suite"]
+            UT["Unit Tests"]:::p4
+            IT["Integration Tests"]:::p4
+            ET["E2E Tests"]:::p4
         end
+        BENCH["Benchmarks"]:::p4
+        PROG1["Progress.txt per task"]:::p4
     end
-    
-    subgraph P5_ART["━━━ PHASE 5: QA ARTIFACTS ━━━"]
-        direction TB
-        TC[Test<br/>Cases]
-        
-        subgraph Reports_Group["Test Reports"]
-            UTR[Unit<br/>Reports]
-            ITR[Int<br/>Reports]
-            STR[System<br/>Reports]
-            LTR[Load<br/>Reports]
+
+    subgraph PH5_ART["PHASE 5 ARTIFACTS"]
+        subgraph REPORTS["Test Reports"]
+            UTR["Unit Test Report"]:::p5
+            ITR["Integration Report"]:::p5
+            STR["System Test Report"]:::p5
         end
-        
-        COV[Coverage<br/>Report]
-        
-        subgraph Bugs_Group["Bug Evidence"]
-            BE1[Bug Pack 1]
-            BE2[Bug Pack 2]
-            BEN[Bug Pack N]
+        subgraph BUGS["Bug Evidence"]
+            BEP["Bug Evidence Packs"]:::p5
+            COV["Coverage Metrics"]:::p5
+            PERF["Performance Baseline"]:::p5
         end
     end
-    
-    subgraph P6_ART["━━━ PHASE 6: DEPLOYMENT ARTIFACTS ━━━"]
-        STG[Staging<br/>Build]
-        Val[Validation<br/>Report]
-        PRO[Production<br/>Build]
-        Run[Deployment<br/>Runbook]
-        Roll[Rollback<br/>Plan]
-        Health[Health<br/>Checks]
+
+    subgraph PH6_ART["PHASE 6 ARTIFACTS"]
+        RUNBOOK["Deployment Runbook"]:::p6
+        ROLLBACK["Rollback Procedure"]:::p6
+        RNOTES["Release Notes auto-gen"]:::p6
+        HCHECK["Health Check Results"]:::p6
     end
-    
-    subgraph P7_ART["━━━ PHASE 7: OPERATIONS ARTIFACTS ━━━"]
-        direction TB
-        
-        subgraph Logs_Group["Logs & Metrics"]
-            AppLog[App<br/>Logs]
-            ErrLog[Error<br/>Logs]
-            MetDash[Metrics<br/>Dashboard]
+
+    subgraph PH7_ART["PHASE 7 ARTIFACTS"]
+        subgraph LOGS_GRP["Logs and Metrics"]
+            APPLOG["Application Logs"]:::p7
+            ERRLOG["Error Tracking via Sentry"]:::p7
+            MDASH["Metrics Dashboard"]:::p7
         end
-        
-        subgraph Inc_Group["Incidents"]
-            IR1[Incident 1]
-            IR2[Incident 2]
-            IRN[Incident N]
+        subgraph INC_GRP["Incidents"]
+            IR["Incident Reports"]:::p7
+            PM["Post-Mortems"]:::p7
+            SLA["SLA Compliance Reports"]:::p7
         end
-        
-        SLA[SLA<br/>Report]
     end
-    
-    subgraph P8_ART["━━━ PHASE 8: LEARNING ARTIFACTS ━━━"]
-        RM[Retro<br/>Notes]
-        Les[Lessons<br/>Learned]
-        SOPU[Updated<br/>SOPs]
-        Ski[Skills<br/>Archive]
+
+    subgraph PH8_ART["PHASE 8 ARTIFACTS"]
+        LES["Lessons Learned Doc"]:::p8
+        SOPU["SOP Updates"]:::p8
+        SKILLS["Skills_Learned.md"]:::p8
+        EFFLOG["Efficiency_Log.md"]:::p8
+        RETROLOG["Retrospective_Log.md"]:::p8
+        ROAD["AI Roadmap Draft"]:::p8
     end
-    
-    %% Forward flow with gates
-    VM --> Trans
-    CR --> Trans
-    Trans --> Opus
-    Opus --> Ch1
-    Ch1 -->|G1A: PO| Ch2
-    Ch2 -->|G1B: CEO| SB
-    SB --> PRFAQ
-    
-    Ch2 --> LR
-    Ch2 --> OA
-    LR --> SR
-    OA --> SR
-    SR --> US
-    SR --> GH
-    SR --> LA
-    US -->|G2: Dev+PO| PRD
-    
-    PRD --> ADR1
-    PRD --> ADR2
-    PRD --> ADRN
-    ADR1 --> C4C
-    ADR2 --> C4C
-    ADRN --> C4C
-    C4C --> C4Co
-    C4Co --> C4Cp
-    C4Cp --> CS1
-    CS1 --> HC
-    HC --> CS2
-    CS2 -->|G3: Arch Review| IMP
-    
-    IMP --> Scr
-    Scr --> BEC
-    Scr --> FEC
-    Scr --> API
+
+    subgraph WGRAPH["WORKGRAPH SYSTEM"]
+        WGJ["WorkGraph.json - task graph"]:::wg
+        WGLOCK["Lock per agent"]:::wg
+        WGPROG["progress_summary.md - RAM"]:::wg
+        WGARCH["archive - cold storage"]:::wg
+    end
+
+    G1{"G1 CEO + PO"}:::gate
+    G2{"G2 Arch Review"}:::gate
+    G3{"G3 QA Signoff"}:::gate
+    G4{"G4 Go/No-Go"}:::gate
+    G5{"G5 Weekly SLA"}:::gate
+
+    VM & CR & TG --> TRANS --> OPUS --> CH1 --> CH2
+    CH2 --> SB & PRFAQ
+    SB --> G1
+
+    G1 --> LREP & OANL & EFND
+    LREP & OANL & EFND --> SYNTH --> US
+    US --> GHREPO & LARK
+    GHREPO --> G2
+
+    G2 --> PRDMD & PRDJ
+    PRDMD --> ADR1 & ADR2 & ADRN
+    PRDMD --> C4X --> C4CO --> C4CP
+    ADR1 --> CS1 --> HARD --> CS2 --> IMP
+
+    IMP --> SCRATCH --> SIGNED
+    SIGNED --> BEC & FEC & APIC
     BEC --> UT
-    FEC --> UT
-    BEC --> IT
     FEC --> IT
-    BEC --> ET
-    FEC --> ET
-    BEC --> Bench
-    BEC --> Prog
-    Prog --> ProgSum
-    
-    BEC -->|G4A: PR| TC
-    FEC -->|G4B: PR| TC
-    
-    TC --> UTR
-    UT --> UTR
-    IT --> ITR
-    ET --> STR
-    ET --> LTR
-    UTR --> COV
-    UTR --> BE1
-    ITR --> BE1
-    STR --> BE2
-    LTR --> BEN
-    
-    UTR -->|G5: QA| STG
-    ITR -->|G5: QA| STG
-    STR -->|G5: QA| STG
-    COV -->|G5: QA| STG
-    
-    STG --> Val
-    Val --> Run
-    Val --> Roll
-    Val -->|G6: Go/NoGo| PRO
-    PRO --> Health
-    Health --> AppLog
-    
-    AppLog --> ErrLog
-    AppLog --> MetDash
-    ErrLog --> IR1
-    MetDash --> IR2
-    IR2 --> SLA
-    SLA -->|G7: Weekly| RM
-    
-    RM --> Les
-    Les --> SOPU
-    Les --> Ski
-    
-    %% Feedback loops
-    BE1 -.Fix Bugs.-> BEC
-    BE2 -.Fix Bugs.-> FEC
-    BEN -.Fix Bugs.-> BEC
-    IR1 -.Hotfix.-> BEC
-    IR2 -.Hotfix.-> BEC
-    Ski -.Next Project.-> VM
-    SOPU -.Improve.-> Trans
-    
-    %% Reuse references
-    ADR1 -.Referenced by.-> BEC
-    ADR2 -.Referenced by.-> FEC
-    ADRN -.Referenced by.-> BEC
-    CS2 -.Guides.-> IMP
-    US -.Traced to.-> ET
-    
-    %% Styling
-    style INPUT fill:#FFB6C1,stroke:#CC0066,stroke-width:3px
-    style P1_ART fill:#FFE6E6,stroke:#CC0000,stroke-width:3px
-    style P2_ART fill:#E6F3FF,stroke:#0066CC,stroke-width:3px
-    style P3_ART fill:#E6FFE6,stroke:#00AA00,stroke-width:3px
-    style P4_ART fill:#FFF4E6,stroke:#FF9900,stroke-width:3px
-    style P5_ART fill:#FFE6F9,stroke:#CC00CC,stroke-width:3px
-    style P6_ART fill:#F0E6FF,stroke:#6600CC,stroke-width:3px
-    style P7_ART fill:#E6FFFF,stroke:#00CCCC,stroke-width:3px
-    style P8_ART fill:#FFFACD,stroke:#FFD700,stroke-width:3px
-    
-    style ADR_Group fill:#D5F4E6,stroke:#00AA00,stroke-width:2px
-    style C4_Group fill:#D5F4E6,stroke:#00AA00,stroke-width:2px
-    style Code_Group fill:#FFF9E6,stroke:#FF9900,stroke-width:2px
-    style Test_Group fill:#FFF9E6,stroke:#FF9900,stroke-width:2px
-    style Evidence_Group fill:#FFF9E6,stroke:#FF9900,stroke-width:2px
-    style Reports_Group fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px
-    style Bugs_Group fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px
-    style Logs_Group fill:#D5F4F4,stroke:#00CCCC,stroke-width:2px
-    style Inc_Group fill:#D5F4F4,stroke:#00CCCC,stroke-width:2px
+    APIC --> ET
+    UT & IT & ET --> BENCH
+
+    BENCH --> G3
+    G3 --> UTR & ITR & STR
+    UTR & ITR & STR --> BEP & COV & PERF
+
+    COV --> RUNBOOK --> ROLLBACK
+    RUNBOOK --> RNOTES
+    ROLLBACK --> G4
+    G4 --> HCHECK
+
+    HCHECK --> APPLOG & ERRLOG & MDASH
+    ERRLOG --> IR --> PM --> SLA
+    SLA --> G5
+
+    G5 --> LES --> SOPU & SKILLS & EFFLOG & RETROLOG
+    LES --> ROAD
+
+    ROAD -.->|"Next Feature"| VM
+    BEP -.->|"Fix Bugs"| BEC
+    IR -.->|"Hotfix"| BEC
+    SOPU -.->|"Improve Process"| PRDMD
+    ADR1 -.->|"Referenced by"| BEC
+    US -.->|"Traced to"| ET
+    PRDJ -.->|"Verified against"| STR
+    WGJ -.->|"Tracks"| PROG1
 ```
