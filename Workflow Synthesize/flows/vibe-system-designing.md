@@ -60,39 +60,47 @@ graph TB
 graph TB
     subgraph Phase_1_PRD
         PRD["PRD Draft"]
+        FR["Functional Requirements"]
+        NFR["Non-Functional Targets"]
+        Constraints["Constraints + Non-goals"]
         Gate["Gatekeeper Review"]
         Gaps["Requirement Gaps"]
         PRDRev["PRD Corrections"]
-        PRD --> Gate --> Gaps --> PRDRev
+        PRD --> FR --> NFR --> Constraints --> Gate --> Gaps --> PRDRev
     end
 
     subgraph Phase_2_Synthesis
         Context["Context Load"]
         Draft["Synthesis Draft"]
-        ADRs["ADRs"]
+        ADRs["ADR Drafts"]
         C4["C4 Diagrams"]
+        Risks["Trade-offs + Consequences"]
         State["Update current_state.md"]
-        Context --> Draft --> ADRs --> C4 --> State
+        Context --> Draft --> ADRs --> C4 --> Risks --> State
     end
 
     subgraph Phase_3_Critique
         Critique["Hardening Critique"]
+        Security["Security Review"]
+        Perf["Performance Review"]
         Response["Resolution Notes"]
         Fix["Design Updates"]
-        Critique --> Response --> Fix
+        Critique --> Security --> Perf --> Response --> Fix
     end
 
     subgraph Phase_4_Plan
         Plan["Implementation Plan"]
         Map["Task Mapping"]
+        Dependencies["Dependency Map"]
         Review["Architecture Review Gate"]
-        Plan --> Map --> Review
+        Plan --> Map --> Dependencies --> Review
     end
 
     subgraph Phase_5_Change
         CR["Change Request"]
         Impact["Impact Analysis"]
-        CR --> Impact
+        Decision["Go/No-Go"]
+        CR --> Impact --> Decision
     end
 
     PRDRev --> Context
@@ -100,5 +108,5 @@ graph TB
     Fix -.re-synthesize.-> Draft
     Fix --> Plan
     Review --> CR
-    Impact --> Gate
+    Decision --> Gate
 ```
