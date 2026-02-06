@@ -1,0 +1,54 @@
+graph TB
+    classDef p1 fill:#FFE6E6,stroke:#CC0000,stroke-width:2px
+    classDef p2 fill:#E6F3FF,stroke:#0066CC,stroke-width:2px
+    classDef p3 fill:#E6FFE6,stroke:#00CC00,stroke-width:2px
+    classDef p4 fill:#FFF4E6,stroke:#FF9900,stroke-width:2px
+    classDef p5 fill:#FFE6F9,stroke:#CC00CC,stroke-width:2px
+    classDef p6 fill:#F0E6FF,stroke:#6600CC,stroke-width:2px
+    classDef p7 fill:#E6FFFF,stroke:#00CCCC,stroke-width:2px
+    classDef p8 fill:#FFFACD,stroke:#FFD700,stroke-width:2px
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+
+    subgraph PLAN["PLAN"]
+        direction LR
+        P1["P1 Initiation\nCEO Vision to Charter"]:::p1
+        P2["P2 Research\nLibrarian + Oracle + Explore"]:::p2
+        P3["P3 Architecture\nPRD + ADRs + C4 + Hardening"]:::p3
+        P1 --> P2 --> P3
+    end
+
+    subgraph BUILD["BUILD"]
+        direction TB
+        P4A["P4a Foundation\nInfra + CI/CD + Observability"]:::p4
+        P4B["P4b Backend Track"]:::p4
+        P4C["P4c Frontend Track"]:::p4
+        P4D["P4d Testing Track"]:::p4
+        P4E["P4e Integration + Hardening"]:::p4
+        P4A --> P4B & P4C & P4D
+        P4B & P4C & P4D --> P4E
+    end
+
+    subgraph SHIP["SHIP"]
+        direction LR
+        P5["P5 QA Testing\nUnit + Integration + System"]:::p5
+        P6["P6 Deploy\nStaging to Production"]:::p6
+        P5 --> P6
+    end
+
+    subgraph LEARN["LEARN"]
+        direction LR
+        P7["P7 Monitor\nDashboards + Incidents"]:::p7
+        P8["P8 Retro\nLessons + SOP Updates"]:::p8
+        P7 --> P8
+    end
+
+    G1{"Gate 1\nCEO + PO"}:::gate
+    G2{"Gate 2\nArch Review"}:::gate
+    G3{"Gate 3\nQA Signoff"}:::gate
+    G4{"Gate 4\nGo/No-Go"}:::gate
+
+    P3 --> G1 --> G2 --> P4A
+    P4E --> G3 --> P5
+    P6 --> G4 --> P7
+    P8 -.->|"Next Feature"| P1
+    P5 -.->|"Bugs"| P4B
