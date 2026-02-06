@@ -13,14 +13,14 @@ graph LR
     classDef evid fill:#F59E0B,color:#000,stroke:#D97706,stroke-width:2px
     classDef feed fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
 
-    IN["INPUT\nVision + Requirements"]:::art
-    PLAN["PLANNING ARTIFACTS\nCharter + PRD + ADRs"]:::art
-    G1{"GATE\nScope + Design Approval"}:::gate
-    CODE["CODE ARTIFACTS\nSource + Tests + Docs"]:::art
-    EVID["EVIDENCE\nTest Reports + Metrics"]:::evid
-    G2{"GATE\nQA + Deploy Approval"}:::gate
-    PROD["PRODUCTION\nLogs + Dashboards"]:::art
-    LEARN["LEARNING\nRetro + SOP Updates"]:::feed
+    IN["INPUT<br/>Vision + Requirements"]:::art
+    PLAN["PLANNING ARTIFACTS<br/>Charter + PRD + ADRs"]:::art
+    G1{"GATE<br/>Scope + Design Approval"}:::gate
+    CODE["CODE ARTIFACTS<br/>Source + Tests + Docs"]:::art
+    EVID["EVIDENCE<br/>Test Reports + Metrics"]:::evid
+    G2{"GATE<br/>QA + Deploy Approval"}:::gate
+    PROD["PRODUCTION<br/>Logs + Dashboards"]:::art
+    LEARN["LEARNING<br/>Retro + SOP Updates"]:::feed
 
     IN ==> PLAN ==> G1 ==> CODE ==> EVID ==> G2 ==> PROD ==> LEARN
     LEARN -.->|"Improve Process"| PLAN
@@ -87,11 +87,11 @@ graph TB
         ROAD["Roadmap Draft"]:::p8
     end
 
-    G1{"Gate 1\nCEO + PO"}:::gate
-    G2{"Gate 2\nArch Review"}:::gate
-    G3{"Gate 3\nQA Signoff"}:::gate
-    G4{"Gate 4\nGo/No-Go"}:::gate
-    G5{"Gate 5\nWeekly Review"}:::gate
+    G1{"Gate 1<br/>CEO + PO"}:::gate
+    G2{"Gate 2<br/>Arch Review"}:::gate
+    G3{"Gate 3<br/>QA Signoff"}:::gate
+    G4{"Gate 4<br/>Go/No-Go"}:::gate
+    G5{"Gate 5<br/>Weekly Review"}:::gate
 
     VM & CR --> CH & SB
     CH --> G1

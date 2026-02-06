@@ -15,12 +15,12 @@ graph LR
     classDef ai fill:#FFD93D,color:#000,stroke:#E6C235,stroke-width:3px
     classDef ops fill:#C5A3FF,color:#000,stroke:#A07FE0,stroke-width:2px
 
-    EX["EXECUTIVES\nCEO + External Clients"]:::exec
-    PO["PRODUCT\nPO + Stakeholders"]:::prod
-    EN["ENGINEERING\nTech Lead + Dev Team"]:::eng
-    QA["QUALITY\nQA + Security"]:::qa
-    OP["OPERATIONS\nDevOps + On-Call"]:::ops
-    AI["AI AGENTS\nSisyphus + 6 Subagents"]:::ai
+    EX["EXECUTIVES<br/>CEO + External Clients"]:::exec
+    PO["PRODUCT<br/>PO + Stakeholders"]:::prod
+    EN["ENGINEERING<br/>Tech Lead + Dev Team"]:::eng
+    QA["QUALITY<br/>QA + Security"]:::qa
+    OP["OPERATIONS<br/>DevOps + On-Call"]:::ops
+    AI["AI AGENTS<br/>Sisyphus + 6 Subagents"]:::ai
 
     EX ==> PO ==> EN
     EN ==> QA ==> OP
@@ -84,9 +84,9 @@ graph TB
         RET["Retrospective"]:::ai
     end
 
-    G1{"Gate 1\nScope"}:::gate
-    G2{"Gate 2\nDesign"}:::gate
-    G3{"Gate 3\nDeploy"}:::gate
+    G1{"Gate 1<br/>Scope"}:::gate
+    G2{"Gate 2<br/>Design"}:::gate
+    G3{"Gate 3<br/>Deploy"}:::gate
 
     PO --> G1 --> TL
     AR --> G2 --> DL

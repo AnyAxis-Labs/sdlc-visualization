@@ -56,10 +56,10 @@ graph LR
     classDef ship fill:#10B981,color:#fff,stroke:#059669,stroke-width:2px
     classDef learn fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
 
-    P["PLAN\nInitiation + Research + Architecture\nWeeks 1-3"]:::plan
-    B["BUILD\nImplementation + Parallel Dev Tracks\nWeeks 3-6"]:::build
-    S["SHIP\nQA + Staging + Production\nWeeks 6-7"]:::ship
-    L["LEARN\nMonitoring + Retro + Improve\nOngoing"]:::learn
+    P["PLAN<br/>Initiation + Research + Architecture<br/>Weeks 1-3"]:::plan
+    B["BUILD<br/>Implementation + Parallel Dev Tracks<br/>Weeks 3-6"]:::build
+    S["SHIP<br/>QA + Staging + Production<br/>Weeks 6-7"]:::ship
+    L["LEARN<br/>Monitoring + Retro + Improve<br/>Ongoing"]:::learn
 
     P ==> B ==> S ==> L
     L -.->|"Next Feature"| P
@@ -82,15 +82,15 @@ graph TB
 
     subgraph PLAN["PLAN"]
         direction LR
-        P1["P1 Initiation\nCEO Vision to Charter"]:::p1
-        P2["P2 Research\nLibrarian + Oracle + Explore"]:::p2
-        P3["P3 Architecture\nPRD + ADRs + C4 + Hardening"]:::p3
+        P1["P1 Initiation<br/>CEO Vision to Charter"]:::p1
+        P2["P2 Research<br/>Librarian + Oracle + Explore"]:::p2
+        P3["P3 Architecture<br/>PRD + ADRs + C4 + Hardening"]:::p3
         P1 --> P2 --> P3
     end
 
     subgraph BUILD["BUILD"]
         direction TB
-        P4A["P4a Foundation\nInfra + CI/CD + Observability"]:::p4
+        P4A["P4a Foundation<br/>Infra + CI/CD + Observability"]:::p4
         P4B["P4b Backend Track"]:::p4
         P4C["P4c Frontend Track"]:::p4
         P4D["P4d Testing Track"]:::p4
@@ -101,22 +101,22 @@ graph TB
 
     subgraph SHIP["SHIP"]
         direction LR
-        P5["P5 QA Testing\nUnit + Integration + System"]:::p5
-        P6["P6 Deploy\nStaging to Production"]:::p6
+        P5["P5 QA Testing<br/>Unit + Integration + System"]:::p5
+        P6["P6 Deploy<br/>Staging to Production"]:::p6
         P5 --> P6
     end
 
     subgraph LEARN["LEARN"]
         direction LR
-        P7["P7 Monitor\nDashboards + Incidents"]:::p7
-        P8["P8 Retro\nLessons + SOP Updates"]:::p8
+        P7["P7 Monitor<br/>Dashboards + Incidents"]:::p7
+        P8["P8 Retro<br/>Lessons + SOP Updates"]:::p8
         P7 --> P8
     end
 
-    G1{"Gate 1\nCEO + PO"}:::gate
-    G2{"Gate 2\nArch Review"}:::gate
-    G3{"Gate 3\nQA Signoff"}:::gate
-    G4{"Gate 4\nGo/No-Go"}:::gate
+    G1{"Gate 1<br/>CEO + PO"}:::gate
+    G2{"Gate 2<br/>Arch Review"}:::gate
+    G3{"Gate 3<br/>QA Signoff"}:::gate
+    G4{"Gate 4<br/>Go/No-Go"}:::gate
 
     P3 --> G1 --> G2 --> P4A
     P4E --> G3 --> P5
@@ -289,12 +289,12 @@ graph LR
     classDef ai fill:#FFD93D,color:#000,stroke:#E6C235,stroke-width:3px
     classDef ops fill:#C5A3FF,color:#000,stroke:#A07FE0,stroke-width:2px
 
-    EX["EXECUTIVES\nCEO + External Clients"]:::exec
-    PO["PRODUCT\nPO + Stakeholders"]:::prod
-    EN["ENGINEERING\nTech Lead + Dev Team"]:::eng
-    QA["QUALITY\nQA + Security"]:::qa
-    OP["OPERATIONS\nDevOps + On-Call"]:::ops
-    AI["AI AGENTS\nSisyphus + 6 Subagents"]:::ai
+    EX["EXECUTIVES<br/>CEO + External Clients"]:::exec
+    PO["PRODUCT<br/>PO + Stakeholders"]:::prod
+    EN["ENGINEERING<br/>Tech Lead + Dev Team"]:::eng
+    QA["QUALITY<br/>QA + Security"]:::qa
+    OP["OPERATIONS<br/>DevOps + On-Call"]:::ops
+    AI["AI AGENTS<br/>Sisyphus + 6 Subagents"]:::ai
 
     EX ==> PO ==> EN
     EN ==> QA ==> OP
@@ -356,9 +356,9 @@ graph TB
         RET["Retrospective"]:::ai
     end
 
-    G1{"Gate 1\nScope"}:::gate
-    G2{"Gate 2\nDesign"}:::gate
-    G3{"Gate 3\nDeploy"}:::gate
+    G1{"Gate 1<br/>Scope"}:::gate
+    G2{"Gate 2<br/>Design"}:::gate
+    G3{"Gate 3<br/>Deploy"}:::gate
 
     PO --> G1 --> TL
     AR --> G2 --> DL
@@ -508,14 +508,14 @@ graph LR
     classDef evid fill:#F59E0B,color:#000,stroke:#D97706,stroke-width:2px
     classDef feed fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
 
-    IN["INPUT\nVision + Requirements"]:::art
-    PLAN["PLANNING ARTIFACTS\nCharter + PRD + ADRs"]:::art
-    G1{"GATE\nScope + Design Approval"}:::gate
-    CODE["CODE ARTIFACTS\nSource + Tests + Docs"]:::art
-    EVID["EVIDENCE\nTest Reports + Metrics"]:::evid
-    G2{"GATE\nQA + Deploy Approval"}:::gate
-    PROD["PRODUCTION\nLogs + Dashboards"]:::art
-    LEARN["LEARNING\nRetro + SOP Updates"]:::feed
+    IN["INPUT<br/>Vision + Requirements"]:::art
+    PLAN["PLANNING ARTIFACTS<br/>Charter + PRD + ADRs"]:::art
+    G1{"GATE<br/>Scope + Design Approval"}:::gate
+    CODE["CODE ARTIFACTS<br/>Source + Tests + Docs"]:::art
+    EVID["EVIDENCE<br/>Test Reports + Metrics"]:::evid
+    G2{"GATE<br/>QA + Deploy Approval"}:::gate
+    PROD["PRODUCTION<br/>Logs + Dashboards"]:::art
+    LEARN["LEARNING<br/>Retro + SOP Updates"]:::feed
 
     IN ==> PLAN ==> G1 ==> CODE ==> EVID ==> G2 ==> PROD ==> LEARN
     LEARN -.->|"Improve Process"| PLAN
@@ -580,11 +580,11 @@ graph TB
         ROAD["Roadmap Draft"]:::p8
     end
 
-    G1{"Gate 1\nCEO + PO"}:::gate
-    G2{"Gate 2\nArch Review"}:::gate
-    G3{"Gate 3\nQA Signoff"}:::gate
-    G4{"Gate 4\nGo/No-Go"}:::gate
-    G5{"Gate 5\nWeekly Review"}:::gate
+    G1{"Gate 1<br/>CEO + PO"}:::gate
+    G2{"Gate 2<br/>Arch Review"}:::gate
+    G3{"Gate 3<br/>QA Signoff"}:::gate
+    G4{"Gate 4<br/>Go/No-Go"}:::gate
+    G5{"Gate 5<br/>Weekly Review"}:::gate
 
     VM & CR --> CH & SB
     CH --> G1

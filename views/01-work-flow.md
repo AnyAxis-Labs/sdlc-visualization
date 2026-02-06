@@ -13,10 +13,10 @@ graph LR
     classDef ship fill:#10B981,color:#fff,stroke:#059669,stroke-width:2px
     classDef learn fill:#A855F7,color:#fff,stroke:#7C3AED,stroke-width:2px
 
-    P["PLAN\nInitiation + Research + Architecture\nWeeks 1-3"]:::plan
-    B["BUILD\nImplementation + Parallel Dev Tracks\nWeeks 3-6"]:::build
-    S["SHIP\nQA + Staging + Production\nWeeks 6-7"]:::ship
-    L["LEARN\nMonitoring + Retro + Improve\nOngoing"]:::learn
+    P["PLAN<br/>Initiation + Research + Architecture<br/>Weeks 1-3"]:::plan
+    B["BUILD<br/>Implementation + Parallel Dev Tracks<br/>Weeks 3-6"]:::build
+    S["SHIP<br/>QA + Staging + Production<br/>Weeks 6-7"]:::ship
+    L["LEARN<br/>Monitoring + Retro + Improve<br/>Ongoing"]:::learn
 
     P ==> B ==> S ==> L
     L -.->|"Next Feature"| P
@@ -41,15 +41,15 @@ graph TB
 
     subgraph PLAN["PLAN"]
         direction LR
-        P1["P1 Initiation\nCEO Vision to Charter"]:::p1
-        P2["P2 Research\nLibrarian + Oracle + Explore"]:::p2
-        P3["P3 Architecture\nPRD + ADRs + C4 + Hardening"]:::p3
+        P1["P1 Initiation<br/>CEO Vision to Charter"]:::p1
+        P2["P2 Research<br/>Librarian + Oracle + Explore"]:::p2
+        P3["P3 Architecture<br/>PRD + ADRs + C4 + Hardening"]:::p3
         P1 --> P2 --> P3
     end
 
     subgraph BUILD["BUILD"]
         direction TB
-        P4A["P4a Foundation\nInfra + CI/CD + Observability"]:::p4
+        P4A["P4a Foundation<br/>Infra + CI/CD + Observability"]:::p4
         P4B["P4b Backend Track"]:::p4
         P4C["P4c Frontend Track"]:::p4
         P4D["P4d Testing Track"]:::p4
@@ -60,22 +60,22 @@ graph TB
 
     subgraph SHIP["SHIP"]
         direction LR
-        P5["P5 QA Testing\nUnit + Integration + System"]:::p5
-        P6["P6 Deploy\nStaging to Production"]:::p6
+        P5["P5 QA Testing<br/>Unit + Integration + System"]:::p5
+        P6["P6 Deploy<br/>Staging to Production"]:::p6
         P5 --> P6
     end
 
     subgraph LEARN["LEARN"]
         direction LR
-        P7["P7 Monitor\nDashboards + Incidents"]:::p7
-        P8["P8 Retro\nLessons + SOP Updates"]:::p8
+        P7["P7 Monitor<br/>Dashboards + Incidents"]:::p7
+        P8["P8 Retro<br/>Lessons + SOP Updates"]:::p8
         P7 --> P8
     end
 
-    G1{"Gate 1\nCEO + PO"}:::gate
-    G2{"Gate 2\nArch Review"}:::gate
-    G3{"Gate 3\nQA Signoff"}:::gate
-    G4{"Gate 4\nGo/No-Go"}:::gate
+    G1{"Gate 1<br/>CEO + PO"}:::gate
+    G2{"Gate 2<br/>Arch Review"}:::gate
+    G3{"Gate 3<br/>QA Signoff"}:::gate
+    G4{"Gate 4<br/>Go/No-Go"}:::gate
 
     P3 --> G1 --> G2 --> P4A
     P4E --> G3 --> P5
