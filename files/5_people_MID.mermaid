@@ -1,0 +1,63 @@
+graph TB
+    classDef exec fill:#FF6B6B,color:#fff,stroke:#DC2626,stroke-width:2px
+    classDef prod fill:#4ECDC4,color:#000,stroke:#2BA8A4,stroke-width:2px
+    classDef eng fill:#45B7D1,color:#fff,stroke:#2E8DAA,stroke-width:2px
+    classDef qa fill:#FCBAD3,color:#000,stroke:#E890B0,stroke-width:2px
+    classDef ai fill:#FFD93D,color:#000,stroke:#E6C235,stroke-width:2px
+    classDef ops fill:#C5A3FF,color:#000,stroke:#A07FE0,stroke-width:2px
+    classDef gate fill:#10B981,color:#fff,stroke:#059669,stroke-width:3px
+
+    subgraph BIZ["BUSINESS LAYER"]
+        CEO["CEO"]:::exec
+        CL["External Clients"]:::exec
+        PO["Product Owner"]:::prod
+        CL --> CEO --> PO
+    end
+
+    subgraph TECH["TECHNICAL LAYER"]
+        TL["Tech Lead"]:::eng
+        DL["Dev Lead"]:::eng
+        AR["Arch Reviewer"]:::eng
+        PO --> TL
+        TL --> DL
+        TL --> AR
+    end
+
+    subgraph DEV["DEVELOPMENT LAYER"]
+        BE1["Backend Dev 1"]:::eng
+        BE2["Backend Dev 2"]:::eng
+        FE1["Frontend Dev 1"]:::eng
+        FE2["Frontend Dev 2"]:::eng
+        DL --> BE1 & BE2 & FE1 & FE2
+    end
+
+    subgraph QUAL["QUALITY LAYER"]
+        QAE["QA Engineer"]:::qa
+        SEC["Security"]:::qa
+        OPS["DevOps"]:::ops
+    end
+
+    subgraph AILAYER["AI AGENT LAYER"]
+        SIS["Sisyphus Orchestrator"]:::ai
+        LIB["Librarian"]:::ai
+        ORA["Oracle"]:::ai
+        IMP["Implementer"]:::ai
+        TST["Test Engineer"]:::ai
+        INTG["Integrator"]:::ai
+        RET["Retrospective"]:::ai
+    end
+
+    G1{"Gate 1\nScope"}:::gate
+    G2{"Gate 2\nDesign"}:::gate
+    G3{"Gate 3\nDeploy"}:::gate
+
+    PO --> G1 --> TL
+    AR --> G2 --> DL
+    QAE --> G3 --> OPS
+
+    SIS <-.-> PO
+    SIS --> LIB & ORA & IMP & TST & INTG & RET
+    IMP <-.-> BE1 & FE1
+    TST <-.-> QAE
+    OPS -.->|"Metrics"| PO
+    SEC -.->|"Audit"| TL

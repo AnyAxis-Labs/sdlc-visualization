@@ -1,0 +1,21 @@
+graph LR
+    classDef exec fill:#FF6B6B,color:#fff,stroke:#DC2626,stroke-width:2px
+    classDef prod fill:#4ECDC4,color:#000,stroke:#2BA8A4,stroke-width:2px
+    classDef eng fill:#45B7D1,color:#fff,stroke:#2E8DAA,stroke-width:2px
+    classDef qa fill:#FCBAD3,color:#000,stroke:#E890B0,stroke-width:2px
+    classDef ai fill:#FFD93D,color:#000,stroke:#E6C235,stroke-width:3px
+    classDef ops fill:#C5A3FF,color:#000,stroke:#A07FE0,stroke-width:2px
+
+    EX["EXECUTIVES\nCEO + External Clients"]:::exec
+    PO["PRODUCT\nPO + Stakeholders"]:::prod
+    EN["ENGINEERING\nTech Lead + Dev Team"]:::eng
+    QA["QUALITY\nQA + Security"]:::qa
+    OP["OPERATIONS\nDevOps + On-Call"]:::ops
+    AI["AI AGENTS\nSisyphus + 6 Subagents"]:::ai
+
+    EX ==> PO ==> EN
+    EN ==> QA ==> OP
+    AI <-.->|"Augments Every Phase"| EN
+    AI <-.->|"Research + Test + Monitor"| PO
+    OP -.->|"Metrics"| PO
+    QA -.->|"Bug Reports"| EN
