@@ -78,76 +78,94 @@ graph TB
         Contracts["API/Contract Specs"]
         Data["Test Data Recipe"]
         Env["Env + Feature Flags"]
+        Policy["AI Data Policy + Redaction"]
     end
 
     subgraph Unit_Phase
         UnitSpec["Unit Scope + Coverage Targets"]
+        Conventions["Test Conventions + Naming"]
         UnitAI["Unit Test Copilot"]
+        Skeleton["Test Skeletons"]
+        Mocks["Mock Strategy"]
         UnitTests["Unit Test Suite"]
         UnitCI["Unit CI Gate"]
         UnitCov["Coverage Report"]
-        UnitSpec --> UnitAI --> UnitTests --> UnitCI --> UnitCov
+        Gaps["Coverage Gaps"]
+        UnitSpec --> Conventions --> UnitAI --> Skeleton --> Mocks --> UnitTests --> UnitCI --> UnitCov --> Gaps
     end
 
     subgraph Integration_Phase
         IntSpec["Contract Matrix"]
+        Schema["Schema Validation"]
+        Idem["Idempotency + Retries"]
         IntAI["Integration Contract Agent"]
         IntData["Seed/Fixtures"]
         IntRun["Integration Runs"]
+        Flake["Flake Handling"]
         IntTriage["Failure Triage"]
-        IntSpec --> IntAI --> IntData --> IntRun --> IntTriage
+        IntSpec --> Schema --> Idem --> IntAI --> IntData --> IntRun --> Flake --> IntTriage
     end
 
     subgraph System_Phase
         Staging["Staging Deploy"]
+        Deps["Dependency Health"]
+        Reset["Data Reset/Seed"]
         Readiness["Readiness Checks"]
         Smoke["Smoke Suite"]
+        Blockers["Blocker Triage"]
         EnvFix["Env Fixes"]
-        Staging --> Readiness --> Smoke --> EnvFix
+        Staging --> Deps --> Reset --> Readiness --> Smoke --> Blockers --> EnvFix
     end
 
     subgraph Plan_Design
         PlanDraft["Test Plan Draft"]
-        RACI["RACI + Entry/Exit"]
-        PlanGate["Plan Sign-off"]
-        Design["Test Cases + Traceability"]
+        Scope["Scope + Entry/Exit"]
+        RACI["RACI + Owners"]
+        Trace["Traceability Matrix"]
+        Design["Test Cases"]
         DataMatrix["Data Matrix"]
         AutoPick["Automation Candidates"]
         DesignGate["Design Review"]
-        PlanDraft --> RACI --> PlanGate --> Design --> DataMatrix --> AutoPick --> DesignGate
+        PlanDraft --> Scope --> RACI --> Trace --> Design --> DataMatrix --> AutoPick --> DesignGate
     end
 
     subgraph Execution
         SuiteSelect["Suite Selection"]
+        Order["Run Order Optimizer"]
         ExecAI["Execution Orchestrator"]
         Runs["Smoke/Targeted/Regression"]
+        Parallel["Parallel Runs"]
         Artifacts["Logs + Screens + Video"]
         Evidence["Evidence Pack"]
-        SuiteSelect --> ExecAI --> Runs --> Artifacts --> Evidence
+        SuiteSelect --> Order --> ExecAI --> Runs --> Parallel --> Artifacts --> Evidence
     end
 
     subgraph Bugs
         Intake["Bug Intake"]
+        Severity["Severity + SLA"]
         Assign["Owner Assignment"]
+        Repro["Repro Steps"]
         Fix["Fix + Verification"]
         ReRun["Targeted Re-run"]
-        Intake --> Assign --> Fix --> ReRun
+        Intake --> Severity --> Assign --> Repro --> Fix --> ReRun
     end
 
     subgraph Reporting
         Report["Release/Weekly Report"]
         KPI["Quality KPIs"]
         GoNoGo["Go/No-Go Gate"]
+        RCA["RCA Summary"]
         Backlog["Improvement Backlog"]
-        Report --> KPI --> GoNoGo --> Backlog
+        Report --> KPI --> GoNoGo --> RCA --> Backlog
     end
 
     PRD --> Risk --> UnitSpec
     Contracts --> IntSpec
     Data --> IntData
     Env --> Staging
+    Policy --> UnitSpec
 
-    UnitCov --> IntSpec
+    Gaps --> IntSpec
     IntTriage --> Staging
     EnvFix --> PlanDraft
     DesignGate --> SuiteSelect
